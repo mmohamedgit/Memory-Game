@@ -1,0 +1,46 @@
+.button-pattern {
+  width: 150px;
+  height: 150px;
+  border-radius: 20%;
+  border: 10px solid black;
+  transition: transform 0.2s;
+}
+
+.redColour {
+  background-color: red;
+}
+
+.blueColour {
+  background-color: blue;
+}
+
+.yellowColour {
+  background-color: yellow;
+}
+
+.greenColour {
+  background-color: green;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: darkgray;
+}
+
+button:hover {
+  transform: scale(1.07);
+}
+
+.sequence-fade {
+  opacity: 1;
+  animation: fade 0.3s linear;
+}
+
+@keyframes fade {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
