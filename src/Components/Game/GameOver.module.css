@@ -3,24 +3,33 @@
   color: black;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+}
+
+.gameover .first {
+  flex-direction: column;
+}
+
+.gameover .second {
+  flex-direction: column;
 }
 
 .title {
   font-size: 50px;
-  margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .score-title {
   font-size: 30px;
   font-weight: 600;
-  margin: 1px auto;
 }
 
 .score {
   font-size: 40px;
   font-weight: 800;
-  margin: 0px auto;
+}
+
+.image img {
+  width: 300px;
 }

@@ -186,7 +186,7 @@ const MemoryGame = (props) => {
   };
 
   return (
-    <Fragment>
+    <div className={classes.app}>
       <Header
         level={gamePattern}
         gameStarted={gameStarted}
@@ -254,7 +254,7 @@ const MemoryGame = (props) => {
           />
         </div>
       )}
-    </Fragment>
+    </div>
   );
 };
 

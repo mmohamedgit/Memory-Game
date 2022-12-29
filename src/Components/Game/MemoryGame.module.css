@@ -5,16 +5,21 @@
   justify-content: center;
 }
 
-.play {
-  background-color: #ddd;
-  border: none;
-  font-size: 25px;
-  color: black;
-  padding: 30px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  @font-face {
+    font-family: "waghupersonal_use";
+    src: url("../../assets/font/waghu-webfont.woff2") format("woff2"),
+      url("../../assets/font/waghu-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
