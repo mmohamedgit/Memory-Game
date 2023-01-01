@@ -1,16 +1,30 @@
+import NextLevelSound from "../../assets/sounds/next-level.mp3";
+import { Fragment, useEffect } from "react";
 import classes from "./Header.module.css";
 const Header = (props) => {
-  //set gameover and maybe save the highest level count in a cookie or in a state
+  const { gameOver, hideStartButton, level, highScore } = props;
 
-  const { level, gameOver } = props;
+  const playSound = (name) => {
+    var audio = new Audio(name);
+    audio.play();
+  };
+
+  useEffect(() => {
+    if (level.length > 1 && !gameOver) {
+      playSound(NextLevelSound);
+    }
+  }, [level, gameOver]);
 
   return (
     <div className={classes.header}>
-      <h1>Welcome to the Memory Game!</h1>
-      {/* {level.length === 0 && !gameStarted && !gameOver && (
-        <h2>Press Button To Start</h2>
-      )} */}
-      {level.length > 0 && !gameOver && <h2>Level {level.length}</h2>}
+      {!hideStartButton && <h1>Welcome to the Memory Game!</h1>}
+
+      {level.length > 0 && !gameOver && (
+        <Fragment>
+          <h2>LEVEL {level.length}</h2>
+          <h2>HIGH SCORE: {highScore}</h2>
+        </Fragment>
+      )}
     </div>
   );
 };

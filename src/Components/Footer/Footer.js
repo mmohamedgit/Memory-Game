@@ -12,7 +12,7 @@ const Footer = () => {
             src={require(`../../assets/images/brain-logo.svg`).default}
             alt="starry-night"
           ></img>
-          <p>Weather App Project</p>
+          <p>Memory Game</p>
         </div>
         <div className={classes["social-media"]}>
           <a

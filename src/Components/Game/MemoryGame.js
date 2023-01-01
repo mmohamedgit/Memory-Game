@@ -1,16 +1,17 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect } from "react";
 import Header from "../Game/Header";
 import GameButton from "./GameButton";
-import ClickSound from "../../assets/sounds/click.wav";
+import StartSound from "../../assets/sounds/start.mp3";
+import ButtonClickSound from "../../assets/sounds/game-button-click.wav";
 import SequenceSound from "../../assets/sounds/sequence.mp3";
 import GameOverSound from "../../assets/sounds/gameover.mp3";
 import GameOver from "./GameOver";
 import classes from "./MemoryGame.module.css";
 import PlayButton from "./PlayButton";
 
-const MemoryGame = (props) => {
+const MemoryGame = () => {
   const [gameStarted, setgameStarted] = useState(false);
-  const [gameOver, setGameOver] = useState(false);
+  const [isGameOver, setIsGameOver] = useState(false);
   const [gamePattern, setgamePattern] = useState([]);
   const [hideStartButton, setHideStartButton] = useState(false);
   const [highestScore, setHighestScore] = useState(0);
@@ -34,6 +35,7 @@ const MemoryGame = (props) => {
   const fourthButton = buttonTheme[3];
 
   const addNextSequence = () => {
+    setFreezeButton(true);
     const randomNumber = Math.floor(Math.random() * 4);
     const randomColour = buttonTheme[randomNumber];
 
@@ -44,22 +46,34 @@ const MemoryGame = (props) => {
     console.log(newPattern);
   };
 
-  const resetGameHandler = () => {
-    setGameOver(false);
+  //maybe export this in a separate file
+  const playSound = (name) => {
+    var audio = new Audio(name);
+    audio.play();
+  };
+
+  const restartGameHandler = () => {
+    setFreezeButton(true);
+    setIsGameOver(false);
     startGame();
   };
 
   const resetGame = () => {
-    setgamePattern([]);
+    setIsGameOver(true);
     setgameStarted(false);
+    setgamePattern([]);
     setPlayingIndex(0);
   };
 
   const startGame = () => {
     if (!gameStarted) {
-      setHideStartButton(true);
       setgameStarted(true);
-      addNextSequence();
+      setHideStartButton(true);
+      playSound(StartSound);
+
+      setTimeout(() => {
+        addNextSequence();
+      }, 3000);
     }
   };
 
@@ -76,6 +90,7 @@ const MemoryGame = (props) => {
             timer1 = setTimeout(() => {
               setFlashFirstButton(true);
               playSound(SequenceSound);
+
               timer2 = setTimeout(() => {
                 setFlashFirstButton(false);
                 nextPattern();
@@ -142,28 +157,27 @@ const MemoryGame = (props) => {
       }
     };
 
-    showGamePattern();
-  }, [
-    gamePattern,
-    firstButton,
-    secondButton,
-    thirdButton,
-    fourthButton,
-    gameOver,
-  ]);
+    const patternTimer = () => {
+      setTimeout(() => {
+        showGamePattern();
+      }, 1000);
+    };
+
+    patternTimer();
+  }, [gamePattern, firstButton, secondButton, thirdButton, fourthButton]);
 
   const buttonClickHandler = (clickedItem) => {
     if (gameStarted) {
-      // User clicked the correct colour of the game pattern
-      playSound(ClickSound);
+      // If the User clicked the matching colour of the game pattern
+      playSound(ButtonClickSound);
       if (gamePattern[playingIndex] === clickedItem) {
-        // User clicked the last item of the pattern
+        // If the User clicked the last item of the pattern
         if (playingIndex === gamePattern.length - 1) {
           setTimeout(() => {
             setPlayingIndex(0);
             addNextSequence();
           }, 300);
-          // User missing some items of the game pattern to be clicked
+          // If the User is missing some items of the game pattern to be clicked
         } else {
           setPlayingIndex(playingIndex + 1);
         }
@@ -173,52 +187,53 @@ const MemoryGame = (props) => {
           console.log(highestScore);
         }
         resetGame();
-        setGameOver(true);
         playSound(GameOverSound);
       }
     }
-  };
-
-  const playSound = (name) => {
-    var audio = new Audio(name);
-
-    audio.play();
   };
 
   return (
     <div className={classes.app}>
       <Header
         level={gamePattern}
-        gameStarted={gameStarted}
-        gameOver={gameOver}
+        highScore={highestScore}
+        gameOver={isGameOver}
+        hideStartButton={hideStartButton}
       />
-
-      {gameOver && (
+      {!gamePattern && <p>Good Luck!</p>}
+      {isGameOver && (
         <GameOver
-          gameOver={gameOver}
-          onResetGame={resetGameHandler}
-          highestScore={highestScore}
+          gameOver={isGameOver}
+          onRestartGame={restartGameHandler}
+          highScore={highestScore}
         />
       )}
 
-      {!hideStartButton ? (
-        <PlayButton onClick={startGame} title="Start" />
-      ) : (
+      {!hideStartButton && <PlayButton onClick={startGame} title="Start" />}
+
+      {!isGameOver && hideStartButton && gameStarted && (
         <div className={classes["tile-2x2"]} tabIndex={0}>
-          {/* {buttonColours.map((colour, i) => {
-          return (
-            <Button
-              key={colour}
-              onSelectedItem={selectedItem}
-              colour={colour}
-              nextRandomSequence={nextRandomSequence}
-              ref={buttonRefs.current[i]}
-            />
-          );
-        })} */}
+          {/* {buttonTheme.map((item, idx) => {
+            let flashMe;
+            if (flashFirstButton) {
+              flashMe = true;
+            }
+            return (
+              <GameButton
+                key={item}
+                gameStarted={gameStarted}
+                gameOver={isGameOver}
+                gamePattern={gamePattern}
+                button={item}
+                freezeButton={freezeButton}
+                flashNextSequence={flashMe}
+                onButtonClick={buttonClickHandler}
+              />
+            );
+          })} */}
           <GameButton
             gameStarted={gameStarted}
-            gameOver={gameOver}
+            gameOver={isGameOver}
             gamePattern={gamePattern}
             button={firstButton}
             freezeButton={freezeButton}
@@ -227,7 +242,7 @@ const MemoryGame = (props) => {
           />
           <GameButton
             gameStarted={gameStarted}
-            gameOver={gameOver}
+            gameOver={isGameOver}
             gamePattern={gamePattern}
             button={secondButton}
             freezeButton={freezeButton}
@@ -236,7 +251,7 @@ const MemoryGame = (props) => {
           />
           <GameButton
             gameStarted={gameStarted}
-            gameOver={gameOver}
+            gameOver={isGameOver}
             gamePattern={gamePattern}
             button={thirdButton}
             freezeButton={freezeButton}
@@ -245,7 +260,7 @@ const MemoryGame = (props) => {
           />
           <GameButton
             gameStarted={gameStarted}
-            gameOver={gameOver}
+            gameOver={isGameOver}
             gamePattern={gamePattern}
             button={fourthButton}
             freezeButton={freezeButton}

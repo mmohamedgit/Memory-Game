@@ -1,18 +1,21 @@
 .gameover {
   text-align: center;
-  color: black;
+  color: white;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: center;
+  font-weight: 900;
 }
 
 .gameover .first {
+  display: flex;
   flex-direction: column;
 }
 
 .gameover .second {
   flex-direction: column;
+  display: flex;
 }
 
 .title {
@@ -21,15 +24,19 @@
 }
 
 .score-title {
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 600;
 }
 
 .score {
-  font-size: 40px;
+  font-size: 100px;
   font-weight: 800;
+  color: yellow;
 }
 
 .image img {
-  width: 300px;
+  width: 275px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
 }

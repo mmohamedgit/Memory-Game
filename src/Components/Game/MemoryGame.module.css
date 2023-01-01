@@ -5,21 +5,23 @@
   justify-content: center;
 }
 
+@font-face {
+  font-family: "Lalezar-Regular";
+  src: url("../../Font/Lalezar-Regular.otf") format("truetype");
+}
+
 body {
   margin: 0;
   padding: 0;
   background-color: black;
-  @font-face {
-    font-family: "waghupersonal_use";
-    src: url("../../assets/font/waghu-webfont.woff2") format("woff2"),
-      url("../../assets/font/waghu-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: "Lalezar-Regular";
 }
 
 .app {
-  min-height: 100vh;
+  min-height: 92vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
 }

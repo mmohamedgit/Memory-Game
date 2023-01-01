@@ -13,16 +13,18 @@
 
 .modal {
   display: flex;
-  flex-direction: column;
   margin: auto;
   align-items: center;
-  width: clamp(50%, 700px, 90%);
-  height: min(50%, 300px);
-  background-color: white;
+  justify-content: center;
+  width: clamp(30%, 450px, 90%);
+  height: min(50%, 450px);
+  background-color: black;
   padding: 0, 2rem;
   border-radius: 14px;
+  border-style: solid;
+  border-color: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  /* z-index: 30; */
+  z-index: 30;
   animation: slide-down 300ms ease-out forwards;
 }
 
@@ -36,3 +38,17 @@
     transform: translateY(0px);
   }
 }
+
+/* .fade-out {
+  animation: fadeOut ease 5s;
+  animation-fill-mode: forwards;
+} */
+
+/* @keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+} */

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from "./Button.module.css";
+import classes from "./GameButton.module.css";
 
 const GameButton = (props) => {
   const [isClickedItem, setIsClickedItem] = useState(false);
