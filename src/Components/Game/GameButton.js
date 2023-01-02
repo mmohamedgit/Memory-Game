@@ -4,11 +4,11 @@ import classes from "./GameButton.module.css";
 const GameButton = (props) => {
   const [isClickedItem, setIsClickedItem] = useState(false);
 
-  const { button, flashNextSequence, freezeButton, gameOver } = props;
+  const { id, button, freezeButton, flashButton } = props;
 
   const btnClasses = ` ${classes[button]} ${classes["button-pattern"]} ${
     isClickedItem && classes.pressed
-  } ${!gameOver && flashNextSequence ? classes["sequence-fade"] : ""}`;
+  } ${button === flashButton ? classes["sequence-fade"] : ""}`;
 
   const buttonClickHandler = () => {
     if (freezeButton) return;
@@ -24,7 +24,7 @@ const GameButton = (props) => {
 
   return (
     <div>
-      <button className={btnClasses} onClick={buttonClickHandler}>
+      <button id={id} className={btnClasses} onClick={buttonClickHandler}>
         {props.title}
       </button>
     </div>
