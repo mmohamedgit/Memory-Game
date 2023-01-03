@@ -22,7 +22,9 @@ const MemoryGame = () => {
   let buttonTheme = [];
   let newPattern = [];
 
-  //add state/if  to select button theme
+  //modal to select button theme & difficulty
+  //normal theme, office theme, elon musk theme
+  //easy - 1x1, medium - 2x2, hard - 3x3
 
   buttonTheme = ["redColour", "blueColour", "greenColour", "yellowColour"];
 
@@ -50,7 +52,6 @@ const MemoryGame = () => {
   };
 
   const resetPattern = () => {
-    setFreezeButton(true);
     setIsGameOver(true);
     setgameStarted(false);
     setgamePattern([]);
@@ -70,44 +71,36 @@ const MemoryGame = () => {
     }
   };
 
-  // useEffect to play the pattern sequence animation and this effect gets triggered with the change in the gamePattern after each level
-
   useEffect(() => {
-    // The sequence will start after 1 second when the User clears the level
-    const patternTimer = () => {
-      setTimeout(() => {
-        setFlashButton(() => null);
-        showGamePattern();
-      }, 1000);
-    };
+    let interval;
+    let currentIndex = 0;
 
-    // To loop through the patterns from the gamePattern array and set the CSS flash animation + sequence sound for each button pattern
     const showGamePattern = () => {
-      setFreezeButton(true);
-      if (gamePattern.length > 0) {
-        gamePattern.forEach((item, i) => {
-          const timer1 = setTimeout(() => {
-            setFlashButton(item);
-            playSound(SequenceSound);
-          }, 1000 * (i + 1));
-
-          return () => {
-            clearTimeout(timer1);
-          };
-        });
-      }
-
       // To prevent the User from clicking the game buttons during the sequence duration
-      const freezeButtonTimer = setTimeout(() => {
-        setFreezeButton(false);
-      }, gamePattern.length * 1000);
+      setFreezeButton(true);
 
-      return () => {
-        clearTimeout(freezeButtonTimer);
-      };
+      if (currentIndex < gamePattern.length) {
+        const currentColor = gamePattern[currentIndex];
+        setFlashButton(currentColor);
+        playSound(SequenceSound);
+        // Reset the flash class after a short delay
+        setTimeout(() => {
+          setFlashButton(null);
+        }, 300);
+
+        currentIndex++;
+      } else {
+        setFreezeButton(false);
+        clearInterval(interval);
+      }
     };
 
-    patternTimer();
+    interval = setInterval(showGamePattern, 1000);
+
+    // Return a function to clear the timer when the component unmounts
+    return () => {
+      clearInterval(interval);
+    };
   }, [gamePattern]);
 
   const buttonClickHandler = (clickedItem) => {

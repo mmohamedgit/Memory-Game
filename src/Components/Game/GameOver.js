@@ -24,7 +24,7 @@ const GameOver = (props) => {
         <h2 className={classes.title}>Game Over!</h2>
         <div className={classes.image}>
           <img
-            src={require(`../../assets/images/the-office/gameover.png`)}
+            src={require(`../../assets/images/default/gameover.svg`).default}
             alt="game-over"
           ></img>
         </div>
