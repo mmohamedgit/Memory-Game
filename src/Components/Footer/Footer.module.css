@@ -26,7 +26,8 @@ footer {
 }
 
 .logo img {
-  width: 40px;
+  width: 25px;
+  padding: 10px;
 }
 
 .social-media {

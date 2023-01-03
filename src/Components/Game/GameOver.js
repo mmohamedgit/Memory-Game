@@ -21,7 +21,7 @@ const GameOver = (props) => {
   const GameOverMessage = () => {
     return (
       <div className={classes.first}>
-        <h2 className={classes.title}>Game Over!</h2>
+        <h2 className={classes.title}>GAME OVER!</h2>
         <div className={classes.image}>
           <img
             src={require(`../../assets/images/default/gameover.svg`).default}

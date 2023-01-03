@@ -9,8 +9,8 @@ const Footer = () => {
       <div className={classes["footer-container"]}>
         <div className={classes.logo}>
           <img
-            src={require(`../../assets/images/brain-logo.svg`).default}
-            alt="starry-night"
+            src={require(`../../assets/images/logo.svg`).default}
+            alt="logo"
           ></img>
           <p>Memory Game</p>
         </div>
