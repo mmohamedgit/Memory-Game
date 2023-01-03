@@ -1,7 +1,8 @@
 import NextLevelSound from "../../assets/sounds/next-level.mp3";
-import { Fragment, useEffect } from "react";
+import { useState, useEffect } from "react";
 import classes from "./Header.module.css";
 const Header = (props) => {
+  const [playedPreviousGame, setPlayedPreviousGame] = useState(false);
   const { gameOver, hideStartButton, level, highScore } = props;
 
   const playSound = (name) => {
@@ -15,16 +16,17 @@ const Header = (props) => {
     }
   }, [level, gameOver]);
 
+  if (!playedPreviousGame && gameOver) {
+    setPlayedPreviousGame(true);
+  }
+
   return (
     <div className={classes.header}>
       {!hideStartButton && <h1>Welcome to the Memory Game!</h1>}
 
-      {level.length > 0 && !gameOver && (
-        <Fragment>
-          <h2>LEVEL {level.length}</h2>
-          <h2>HIGH SCORE: {highScore}</h2>
-        </Fragment>
-      )}
+      {level.length > 0 && !gameOver && <h2>LEVEL {level.length}</h2>}
+
+      {playedPreviousGame && !gameOver && <h2>HIGH SCORE: {highScore}</h2>}
     </div>
   );
 };

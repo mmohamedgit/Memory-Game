@@ -37,6 +37,13 @@ const GameOver = (props) => {
       <div className={classes.second}>
         <div className={classes["score-title"]}>Highest Score</div>
         <div className={classes.score}>{props.highScore}</div>
+        <div className={classes.genius}>
+          <div>You are an Einstein Genius!</div>
+          <img
+            src={require(`../../assets/images/geniuses/einstein.webp`)}
+            alt="game-over"
+          ></img>
+        </div>
         <div>
           <PlayButton
             gameOver={props.gameOver}
