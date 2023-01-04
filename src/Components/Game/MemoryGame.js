@@ -10,6 +10,7 @@ import classes from "./MemoryGame.module.css";
 import PlayButton from "./PlayButton";
 
 const MemoryGame = () => {
+  const [playedPreviousGame, setPlayedPreviousGame] = useState(false);
   const [gameStarted, setgameStarted] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
   const [gamePattern, setgamePattern] = useState([]);
@@ -27,6 +28,10 @@ const MemoryGame = () => {
   //easy - 1x1, medium - 2x2, hard - 3x3
 
   patternTheme = ["redColour", "blueColour", "greenColour", "yellowColour"];
+
+  if (!playedPreviousGame && isGameOver && highestScore > 0) {
+    setPlayedPreviousGame(true);
+  }
 
   const addNextSequence = () => {
     setFreezeButton(true);
@@ -53,9 +58,9 @@ const MemoryGame = () => {
 
   const resetPattern = () => {
     setIsGameOver(true);
-    setgameStarted(false);
-    setgamePattern([]);
     setPlayingIndex(0);
+    setgamePattern([]);
+    setgameStarted(false);
   };
 
   const startGame = () => {
@@ -141,6 +146,7 @@ const MemoryGame = () => {
         }
       } else {
         // If the User clicked on the wrong pattern, gamePattern resets to an empty array
+
         playSound(GameOverSound);
         resetPattern();
       }
@@ -149,21 +155,14 @@ const MemoryGame = () => {
 
   return (
     <div className={classes.app}>
-      <Header
-        level={gamePattern}
-        highScore={highestScore}
-        gameOver={isGameOver}
-        hideStartButton={hideStartButton}
-      />
-      {isGameOver && (
-        <GameOver
-          gameOver={isGameOver}
-          onRestartGame={restartGameHandler}
-          highScore={highestScore}
-        />
+      {!isGameOver && gameStarted && (
+        <Header level={gamePattern} gameOver={isGameOver} />
       )}
+
+      {!hideStartButton && <h1>Welcome to the Memory Game!</h1>}
       {!hideStartButton && <PlayButton onClick={startGame} title="Start" />}
-      {!isGameOver && hideStartButton && gameStarted && (
+
+      {!isGameOver && gameStarted && (
         <div className={classes["tile-2x2"]} tabIndex={0}>
           {patternTheme.map((item, index) => {
             return (
@@ -181,6 +180,15 @@ const MemoryGame = () => {
             );
           })}
         </div>
+      )}
+      {playedPreviousGame && <h1>HIGH SCORE: {highestScore}</h1>}
+      {isGameOver && (
+        <GameOver
+          score={gamePattern.length}
+          highScore={highestScore}
+          gameOver={isGameOver}
+          onRestartGame={restartGameHandler}
+        />
       )}
     </div>
   );

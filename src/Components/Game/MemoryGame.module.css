@@ -25,3 +25,8 @@ body {
   align-items: center;
   margin-bottom: 0px;
 }
+
+.app h1 {
+  color: white;
+  font-size: 50px;
+}
