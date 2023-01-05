@@ -15,6 +15,7 @@ const MemoryGame = () => {
   const [isGameOver, setIsGameOver] = useState(false);
   const [gamePattern, setgamePattern] = useState([]);
   const [hideStartButton, setHideStartButton] = useState(false);
+  const [currentScore, setCurrentScore] = useState(0);
   const [highestScore, setHighestScore] = useState(0);
   const [playingIndex, setPlayingIndex] = useState(0);
   const [flashButton, setFlashButton] = useState(null);
@@ -146,7 +147,7 @@ const MemoryGame = () => {
         }
       } else {
         // If the User clicked on the wrong pattern, gamePattern resets to an empty array
-
+        setCurrentScore(() => gamePattern.length - 1);
         playSound(GameOverSound);
         resetPattern();
       }
@@ -184,7 +185,7 @@ const MemoryGame = () => {
       {playedPreviousGame && <h1>HIGH SCORE: {highestScore}</h1>}
       {isGameOver && (
         <GameOver
-          score={gamePattern.length}
+          score={currentScore}
           highScore={highestScore}
           gameOver={isGameOver}
           onRestartGame={restartGameHandler}
