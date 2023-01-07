@@ -16,8 +16,8 @@
   margin: auto;
   align-items: center;
   justify-content: center;
-  width: clamp(35%, 475px, 90%);
-  height: min(75%, 500px);
+  width: clamp(35%, 32rem, 90%);
+  height: min(75%, 34rem);
   background-color: black;
   padding: 0, 2rem;
   border-radius: 14px;
@@ -38,17 +38,3 @@
     transform: translateY(0px);
   }
 }
-
-/* .fade-out {
-  animation: fadeOut ease 5s;
-  animation-fill-mode: forwards;
-} */
-
-/* @keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-} */

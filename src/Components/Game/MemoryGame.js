@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Header from "../Game/Header";
 import GameButton from "./GameButton";
 import StartSound from "../../assets/sounds/start.mp3";
 import ButtonClickSound from "../../assets/sounds/game-button-click.wav";
@@ -7,37 +6,52 @@ import SequenceSound from "../../assets/sounds/sequence.mp3";
 import GameOverSound from "../../assets/sounds/gameover.mp3";
 import GameOver from "./GameOver";
 import classes from "./MemoryGame.module.css";
-import PlayButton from "./PlayButton";
+import GameLevel from "./GameLevel";
+import GameOptions from "./GameOptions";
 
-const MemoryGame = () => {
+const MemoryGame = (props) => {
   const [playedPreviousGame, setPlayedPreviousGame] = useState(false);
   const [gameStarted, setgameStarted] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [selectedPattern, setSelectedPattern] = useState([]);
   const [gamePattern, setgamePattern] = useState([]);
-  const [hideStartButton, setHideStartButton] = useState(false);
   const [currentScore, setCurrentScore] = useState(0);
   const [highestScore, setHighestScore] = useState(0);
   const [playingIndex, setPlayingIndex] = useState(0);
   const [flashButton, setFlashButton] = useState(null);
   const [freezeButton, setFreezeButton] = useState(true);
 
-  let patternTheme = [];
+  // let patternTheme = [];
   let newPattern = [];
+  // let patternTheme = [];
 
   //modal to select button theme & difficulty
   //normal theme, office theme, elon musk theme
   //easy - 1x1, medium - 2x2, hard - 3x3
 
-  patternTheme = ["redColour", "blueColour", "greenColour", "yellowColour"];
+  // patternTheme = ["redColour", "blueColour", "greenColour", "yellowColour"];
 
   if (!playedPreviousGame && isGameOver && highestScore > 0) {
     setPlayedPreviousGame(true);
   }
 
-  const addNextSequence = () => {
+  const addNextSequence = (pattern) => {
     setFreezeButton(true);
-    const randomNumber = Math.floor(Math.random() * 4);
-    const randomColour = patternTheme[randomNumber];
+
+    let chosenPattern;
+
+    if (pattern) {
+      chosenPattern = pattern;
+    } else {
+      chosenPattern = selectedPattern;
+    }
+
+    const patternLength = chosenPattern.length;
+
+    console.log(chosenPattern.length);
+
+    const randomNumber = Math.floor(Math.random() * patternLength);
+    const randomColour = chosenPattern[randomNumber];
 
     newPattern = [...gamePattern, randomColour];
 
@@ -46,7 +60,6 @@ const MemoryGame = () => {
     console.log(newPattern);
   };
 
-  //maybe export this in a separate file
   const playSound = (name) => {
     var audio = new Audio(name);
     audio.play();
@@ -64,15 +77,16 @@ const MemoryGame = () => {
     setgameStarted(false);
   };
 
-  const startGame = () => {
+  const startGame = (pattern) => {
     setFreezeButton(true);
+    setSelectedPattern(pattern);
+
     if (!gameStarted) {
       setgameStarted(true);
-      setHideStartButton(true);
       playSound(StartSound);
 
       const addNextSequenceTimer = setTimeout(() => {
-        addNextSequence();
+        addNextSequence(pattern);
       }, 3000);
 
       return () => {
@@ -156,16 +170,14 @@ const MemoryGame = () => {
 
   return (
     <div className={classes.app}>
+      <GameOptions onSelectedPattern={startGame} />
       {!isGameOver && gameStarted && (
-        <Header level={gamePattern} gameOver={isGameOver} />
+        <GameLevel level={gamePattern} gameOver={isGameOver} />
       )}
-
-      {!hideStartButton && <h1>Welcome to the Memory Game!</h1>}
-      {!hideStartButton && <PlayButton onClick={startGame} title="Start" />}
 
       {!isGameOver && gameStarted && (
         <div className={classes["tile-2x2"]} tabIndex={0}>
-          {patternTheme.map((item, index) => {
+          {selectedPattern.map((item, index) => {
             return (
               <GameButton
                 key={index}
@@ -182,7 +194,9 @@ const MemoryGame = () => {
           })}
         </div>
       )}
-      {playedPreviousGame && <h1>HIGH SCORE: {highestScore}</h1>}
+      {playedPreviousGame && (
+        <h1 className={classes["high-score"]}>HIGH SCORE: {highestScore}</h1>
+      )}
       {isGameOver && (
         <GameOver
           score={currentScore}

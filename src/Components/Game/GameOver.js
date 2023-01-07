@@ -92,22 +92,22 @@ const GameOver = (props) => {
 
     case 13:
     case 14:
-      geniusLevel = "Albert Einstein";
-      geniusLevelMessage = "Want to marry your cousin? It's all relative baby.";
-      imgFormat = ".jpg";
-      break;
-
-    case 15:
-    case 16:
       geniusLevel = "Leonardo da Vinci";
       geniusLevelMessage = "Fight with Michelangelo? It will end as a...draw.";
       imgFormat = ".webp";
       break;
 
+    case 15:
+    case 16:
+      geniusLevel = "Albert Einstein";
+      geniusLevelMessage = "Want to marry your cousin? It's all relative baby.";
+      imgFormat = ".jpg";
+      break;
+
     default:
       geniusLevel = "Galaxy Brain";
       geniusLevelMessage =
-        "We officially declare your genius at galaxy-brain level.";
+        "Congrats, we officially declare your genius at galaxy-brain level. Highest level reached.";
       imgFormat = ".webp";
       break;
   }
@@ -119,15 +119,15 @@ const GameOver = (props) => {
           Highest Score: <span className={classes.score}>{highScore}pts</span>
         </div>
         <div className={classes.genius}>
-          <div>
-            Your Genius Level: <span>{geniusLevel}</span>
+          <div className={classes["genius-level"]}>
+            Genius Level: <span>{geniusLevel}</span>
           </div>
           <img
             className={classes.img}
             src={require(`../../assets/images/geniuses/${geniusLevel}${imgFormat}`)}
             alt="genius-img"
           ></img>
-          <div>{geniusLevelMessage}</div>
+          <div className={classes.message}>{geniusLevelMessage}</div>
         </div>
         <div>
           <PlayButton
