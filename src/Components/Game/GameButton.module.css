@@ -4,6 +4,7 @@
   border-radius: 20%;
   border: 10px solid black;
   transition: transform 0.2s;
+  background-size: cover;
 }
 
 .redColour {
@@ -40,6 +41,149 @@
 
 .orangeColour {
   background-color: orange;
+}
+
+.tesla {
+  background-image: url("../../assets/images/elon-musk/tesla.webp");
+}
+.iceland {
+  background-image: url("../../assets/images/elon-musk/iceland.webp");
+}
+
+.cowboy {
+  background-image: url("../../assets/images/elon-musk/cowboy.webp");
+}
+.cowboy2 {
+  background-image: url("../../assets/images/elon-musk/cowboy2.webp");
+}
+
+.crypto {
+  background-image: url("../../assets/images/elon-musk/crypto.webp");
+}
+
+.neuralink {
+  background-image: url("../../assets/images/elon-musk/neuralink.webp");
+}
+
+.doctor {
+  background-image: url("../../assets/images/elon-musk/doctor.webp");
+}
+
+.roadster {
+  background-image: url("../../assets/images/elon-musk/roadster.webp");
+}
+
+.twitter {
+  background-image: url("../../assets/images/elon-musk/twitter.webp");
+}
+
+.wario {
+  background-image: url("../../assets/images/elon-musk/wario.webp");
+}
+
+.spacex {
+  background-image: url("../../assets/images/elon-musk/spacex.webp");
+  background-size: ;
+}
+
+.doubleok {
+  background-image: url("../../assets/images/elon-musk/doubleok.webp");
+}
+
+.cool {
+  background-image: url("../../assets/images/elon-musk/cool.webp");
+}
+
+.smoking {
+  background-image: url("../../assets/images/elon-musk/stogie.webp");
+}
+
+.smoking2 {
+  background-image: url("../../assets/images/elon-musk/stogie2.webp");
+}
+
+.andy {
+  background-image: url("../../assets/images/the-office/andy.png");
+}
+
+.angela {
+  background-image: url("../../assets/images/the-office/angela.webp");
+}
+
+.dwight {
+  background-image: url("../../assets/images/the-office/dwight.webp");
+}
+
+.dwight2 {
+  background-image: url("../../assets/images/the-office/dwight2.webp");
+}
+
+.dwight-overjoyed {
+  background-image: url("../../assets/images/the-office/dwight-overjoyed.gif");
+}
+
+.dwight-neckthing {
+  background-image: url("../../assets/images/the-office/dwight-neckthing.gif");
+}
+
+.pam {
+  background-image: url("../../assets/images/the-office/pam.webp");
+}
+
+.kevin {
+  background-image: url("../../assets/images/the-office/kevin.webp");
+}
+
+.kevin2 {
+  background-image: url("../../assets/images/the-office/kevin2.gif");
+}
+
+.kelly {
+  background-image: url("../../assets/images/the-office/kelly.webp");
+}
+
+.jim {
+  background-image: url("../../assets/images/the-office/jim.webp");
+}
+
+.michael {
+  background-image: url("../../assets/images/the-office/michael.gif");
+}
+
+.michael-boss {
+  background-image: url("../../assets/images/the-office/michael-boss.gif");
+}
+
+.toby {
+  background-image: url("../../assets/images/the-office/toby.webp");
+}
+
+.stanley {
+  background-image: url("../../assets/images/the-office/stanley.webp");
+}
+
+.ryan {
+  background-image: url("../../assets/images/the-office/ryan.webp");
+}
+
+.scott-boss {
+  background-image: url("../../assets/images/the-office/dwight2.webp");
+}
+
+.stanley-crossedarms {
+  background-image: url("../../assets/images/the-office/stanley-crossedarms.gif");
+}
+
+.stanley-curious {
+  background-image: url("../../assets/images/the-office/stanley-curious.gif");
+}
+
+.stanley-himself {
+  background-image: url("../../assets/images/the-office/stanley-himself.gif");
+}
+
+.creed {
+  background-image: url("../../assets/images/the-office/creed.jpg");
 }
 
 .pressed {

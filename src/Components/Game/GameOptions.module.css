@@ -1,0 +1,62 @@
+.menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.menu h1 {
+  margin: 0px auto;
+  font-size: 50px;
+}
+
+.menu h2 {
+  margin: 0px auto;
+  font-size: 30px;
+}
+
+.select-options label {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.select-options select {
+  position: relative;
+  background-color: transparent;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  border: none;
+  font-family: "Lalezar-Regular";
+}
+
+.select-options option {
+  background: rgb(0, 0, 0);
+  font-family: "Lalezar-Regular";
+}
+
+.preview {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.preview img {
+  border: 1px;
+  border-radius: 10px;
+  border-style: solid black;
+}
+
+.colours img {
+  width: 225px;
+}
+
+.elon-musk img {
+  width: 150px;
+}
+
+.the-office img {
+  width: 150px;
+}

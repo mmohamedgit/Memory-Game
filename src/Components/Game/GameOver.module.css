@@ -47,8 +47,39 @@
   margin: 0.5rem auto;
 }
 
-.image img {
+.x-mark img {
   width: 12.5rem;
+  border-radius: 2%;
+}
+
+.protestor img {
+  width: 20rem;
+  border-radius: 2%;
+}
+
+.scott-no img {
+  width: 20rem;
+  border-radius: 2%;
+}
+
+.scott-no-img img {
+  width: 20rem;
+  border-radius: 2%;
+}
+
+.scott-dislike img {
+  width: 25rem;
+  border-radius: 2%;
+}
+
+.scott-disappointed img {
+  width: 20rem;
+  border-radius: 2%;
+}
+
+.scott-holdingback img {
+  width: 20rem;
+  border-radius: 2%;
 }
 
 .genius-level {

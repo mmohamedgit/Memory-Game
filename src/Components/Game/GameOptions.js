@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Modal from "../Modal/Modal";
 import PlayButton from "./PlayButton";
+import classes from "./GameOptions.module.css";
 
 const GameOptions = (props) => {
-  //pattern theme
-  //difficulty
+  const { gameOver } = props;
 
   const [patternTheme, setPatternTheme] = useState("colours");
   const [difficulty, setDifficulty] = useState(4);
@@ -12,70 +12,127 @@ const GameOptions = (props) => {
 
   // const numbers =[]
 
-  const colours = [
-    "redColour",
-    "blueColour",
-    "greenColour",
-    "yellowColour",
-    "orangeColour",
-    "purpleColour",
-    "magentaColour",
+  let buttonLabel;
 
-    "darkGrayColour",
-    "cyanColour",
-  ];
+  gameOver ? (buttonLabel = "Restart") : (buttonLabel = "Start");
 
-  const elonMusk = [
-    "cowboy",
-    "doctor",
-    "crypto",
-    "wario",
-    "iceland",
-    "tesla",
-    "spacex",
-    "neuralink",
-    "roadster",
-  ];
+  const colours = {
+    theme: "colours",
+    patternItems: [
+      "redColour",
+      "blueColour",
+      "greenColour",
+      "yellowColour",
+      "orangeColour",
+      "purpleColour",
+      "magentaColour",
+      "darkGrayColour",
+      "cyanColour",
+    ],
+    gameOverImages: ["x-mark"],
+  };
+
+  const elonMusk = {
+    theme: "elon-musk",
+    patternItems: [
+      "cowboy",
+      "cowboy2",
+      "doctor",
+      "crypto",
+      "wario",
+      "iceland",
+      "tesla",
+      "spacex",
+      "neuralink",
+      "roadster",
+      "doubleok",
+      "smoking",
+      "smoking2",
+      "cool",
+      "twitter",
+    ],
+    gameOverImages: ["protestor"],
+  };
+
+  const theOffice = {
+    theme: "the-office",
+    patternItems: [
+      "jim",
+      "michael",
+      "michael-boss",
+      "dwight",
+      "dwight2",
+      "dwight-overjoyed",
+      "dwight-neckthing",
+      "stanley",
+      "stanley-curious",
+      "stanley-himself",
+      "stanley-crossedarms",
+      "pam",
+      "andy",
+      "angela",
+      "kelly",
+      "ryan",
+      "toby",
+      "kevin",
+      "kevin2",
+      "creed",
+    ],
+    gameOverImages: [
+      "scott-no",
+      "scott-disappointed",
+      "scott-holdingback",
+      "scott-dislike",
+    ],
+  };
 
   const patternThemeHandler = (event) => {
     setPatternTheme(event.target.value);
-    console.log(patternTheme);
   };
 
   const setDifficultyHandler = (event) => {
     setDifficulty(event.target.value);
-    console.log(difficulty);
   };
 
   const selectedPatternHandler = (event) => {
     event.preventDefault();
     let pattern;
+    let theme;
     let difficultyAmount = +difficulty;
-    // const difficultyLevel = Math.floor(Math.random() * difficultyAmount);
-
-    // console.log(difficultyLevel);
 
     switch (patternTheme) {
       case "colours":
         pattern = colours;
+        theme = "Colour";
         break;
       case "elon-musk":
         pattern = elonMusk;
+        theme = "Elon Musk";
+        break;
+
+      case "the-office":
+        pattern = theOffice;
+        theme = "The Office";
         break;
 
       default:
         pattern = colours;
+        theme = "Colour";
         break;
     }
 
-    const selectedPattern = pattern
+    const selectedPattern = pattern.patternItems
       .map((pattern) => ({ pattern, r: Math.random() }))
       .sort((a, b) => a.r - b.r)
       .map((a) => a.pattern)
       .slice(0, difficultyAmount);
-    console.log(selectedPattern);
 
-    props.onSelectedPattern(selectedPattern);
+    // const selectedTheme = pattern.theme;
+    const gameOverImages = pattern.gameOverImages;
+
+    props.onSelectedPattern(selectedPattern, gameOverImages, theme);
+
+    console.log(selectedPattern);
 
     setHideSelection(true);
   };
@@ -84,30 +141,32 @@ const GameOptions = (props) => {
     !hideSelection && (
       <Modal>
         <form onSubmit={selectedPatternHandler}>
-          <div>
-            <h1>Welcome to the Memory Game!</h1>
-            <div>
-              <label htmlFor="theme">Choose Your Theme:</label>
+          <div className={classes["menu"]}>
+            {!gameOver && <h1>Memory Pattern Game</h1>}
+            <h2>Choose your Settings</h2>
+            <div className={classes["select-options"]}>
+              <label htmlFor="theme">Pattern Theme:</label>
               <select
+                name="pattern-theme"
                 value={patternTheme}
-                id="theme"
-                name="theme"
+                id={patternTheme}
                 onChange={patternThemeHandler}
               >
                 <option value="colours">Colours</option>
                 <option value="elon-musk">Elon Musk</option>
+                <option value="the-office">The Office</option>
               </select>
-              <div>
-                <img src="" alt=""></img>
+              <div className={`${classes.preview} ${classes[patternTheme]}`}>
+                <img
+                  src={require(`../../assets/images/${patternTheme}/preview.gif`)}
+                  alt="pattern"
+                ></img>
               </div>
-            </div>
-
-            <div>
-              <label htmlFor="difficulty">Difficulty:</label>
+              <label htmlFor="difficulty">Pattern Difficulty:</label>
               <select
-                value={difficulty}
                 name="difficulty"
-                id="difficulty"
+                value={difficulty}
+                id={difficulty}
                 onChange={setDifficultyHandler}
               >
                 <option value="2">Easy</option>
@@ -115,10 +174,7 @@ const GameOptions = (props) => {
                 <option value="9">Hard</option>
               </select>
             </div>
-            <p>
-              Theme: {patternTheme} Difficulty Level: {difficulty} pattern:
-            </p>
-            <PlayButton title="Start Game" />
+            <PlayButton buttonLabel={buttonLabel} />
           </div>
         </form>
       </Modal>

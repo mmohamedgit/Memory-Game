@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import Modal from "../Modal/Modal";
+import GameOptions from "./GameOptions";
 import classes from "./GameOver.module.css";
 import PlayButton from "./PlayButton";
 
@@ -7,8 +8,57 @@ const GameOver = (props) => {
   //part 1 - timeout the same as the fade-in-out effect then part 2
 
   const [showPlayAgain, setShowPlayAgain] = useState(false);
+  const [showGameOptions, setShowGameOptions] = useState(false);
 
-  const { score, highScore, gameOver, onRestartGame } = props;
+  const {
+    gameOverImages,
+    score,
+    highScore,
+    gameOver,
+    onRestartGame,
+    onStartGame,
+  } = props;
+
+  let gameOverImgFormat;
+
+  const numberOfGameOverImages = gameOverImages.length;
+  const randomNumber = Math.floor(Math.random() * +numberOfGameOverImages);
+  const randomGameOverImage = gameOverImages[randomNumber];
+
+  switch (randomGameOverImage) {
+    case "scott-no":
+      gameOverImgFormat = "gif";
+      break;
+
+    case "scott-dislike":
+      gameOverImgFormat = "gif";
+      break;
+
+    case "scott-disappointed":
+      gameOverImgFormat = "gif";
+      break;
+
+    case "scott-holdingback":
+      gameOverImgFormat = "gif";
+      break;
+    case "scott-no-img":
+      gameOverImgFormat = "webp";
+      break;
+    case "x-mark":
+      gameOverImgFormat = "webp";
+      break;
+
+    case "protestor":
+      gameOverImgFormat = "webp";
+      break;
+    default:
+      break;
+  }
+
+  console.log(randomGameOverImage, gameOverImgFormat);
+  const changeSettingsHandler = () => {
+    setShowGameOptions(true);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -24,9 +74,9 @@ const GameOver = (props) => {
     return (
       <div className={classes.first}>
         <h2 className={classes.title}>GAME OVER!</h2>
-        <div className={classes.image}>
+        <div className={classes[randomGameOverImage]}>
           <img
-            src={require(`../../assets/images/default/gameover.svg`).default}
+            src={require(`../../assets/images/gameover/${randomGameOverImage}.${gameOverImgFormat}`)}
             alt="game-over"
           ></img>
         </div>
@@ -133,20 +183,28 @@ const GameOver = (props) => {
           <PlayButton
             gameOver={gameOver}
             onClick={onRestartGame}
-            title="Play Again"
+            buttonLabel="Restart"
           />
+          <PlayButton buttonLabel="Settings" onClick={changeSettingsHandler} />
         </div>
       </div>
     );
   };
 
   return (
-    <Modal>
-      <div className={classes.gameover}>
-        {!showPlayAgain && <GameOverMessage />}
-        {showPlayAgain && <PlayAgain />}
-      </div>
-    </Modal>
+    <Fragment>
+      {!showGameOptions && (
+        <Modal>
+          <div className={classes.gameover}>
+            {!showPlayAgain && <GameOverMessage />}
+            {showPlayAgain && <PlayAgain />}
+          </div>
+        </Modal>
+      )}
+      {showGameOptions && (
+        <GameOptions onSelectedPattern={onStartGame} gameOver={gameOver} />
+      )}
+    </Fragment>
   );
 };
 

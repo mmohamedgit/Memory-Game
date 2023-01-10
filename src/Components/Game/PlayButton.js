@@ -1,7 +1,7 @@
 import classes from "./PlayButton.module.css";
 
 const PlayButton = (props) => {
-  const { gameOver, onClick, title } = props;
+  const { gameOver, onClick, buttonLabel } = props;
 
   const btnClasses = `${classes.btn} ${gameOver ? classes["play-again"] : ""}`;
 
@@ -11,7 +11,7 @@ const PlayButton = (props) => {
         <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
         <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
       </svg>
-      <span>{title}</span>
+      <span>{buttonLabel}</span>
     </button>
   );
 };

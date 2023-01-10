@@ -6,7 +6,9 @@ const GameButton = (props) => {
 
   const { id, button, freezeButton, flashButton } = props;
 
-  const btnClasses = ` ${classes[button]} ${classes["button-pattern"]} ${
+  console.log(button);
+
+  const btnClasses = `${classes["button-pattern"]} ${classes[button]} ${
     isClickedItem && classes.pressed
   } ${button === flashButton ? classes["sequence-fade"] : ""}`;
 
@@ -24,9 +26,7 @@ const GameButton = (props) => {
 
   return (
     <div>
-      <button id={id} className={btnClasses} onClick={buttonClickHandler}>
-        {props.title}
-      </button>
+      <button id={id} className={btnClasses} onClick={buttonClickHandler} />
     </div>
   );
 };
