@@ -1,7 +1,59 @@
-.header {
+.level {
   font-size: 2rem;
+  text-align: center;
 }
 
-.header h2 {
-  margin-top: 0;
+.level h2 {
+  margin: 25px auto;
+}
+
+@media screen and (max-height: 545px) {
+  .level {
+    position: absolute;
+    left: 335px;
+    top: 20px;
+    width: 50%;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .level {
+    left: 350px;
+    top: 10px;
+  }
+}
+
+@media screen and (max-height: 415px) {
+  .level {
+    left: 425px;
+    top: -10px;
+  }
+}
+
+@media screen and (max-height: 394px) {
+  .level {
+    left: 400px;
+    top: -10px;
+  }
+}
+
+@media screen and (max-height: 376px) {
+  .level {
+    left: 315px;
+    top: -20px;
+  }
+}
+
+@media screen and (max-height: 361px) {
+  .level {
+    left: 350px;
+    top: -25px;
+  }
+}
+
+@media screen and (max-height: 280px) {
+  .level {
+    font-size: 25px;
+    left: 345px;
+  }
 }

@@ -1,5 +1,4 @@
 .menu {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,14 +6,29 @@
   text-align: center;
 }
 
-.menu h1 {
-  margin: 0px auto;
-  font-size: 50px;
-}
-
 .menu h2 {
   margin: 0px auto;
   font-size: 30px;
+}
+
+.preview img {
+  text-align: center;
+  margin: 10px auto;
+  border: 1px;
+  border-radius: 10px;
+  border-style: solid black;
+}
+
+img.colours {
+  width: 225px;
+}
+
+img.elon-musk {
+  width: 225px;
+}
+
+img.the-office {
+  width: 250px;
 }
 
 .select-options label {
@@ -23,7 +37,6 @@
 }
 
 .select-options select {
-  position: relative;
   background-color: transparent;
   color: #fff;
   font-size: 20px;
@@ -38,25 +51,249 @@
   font-family: "Lalezar-Regular";
 }
 
-.preview {
+.title {
+  display: flex;
+  align-items: center;
+  padding: 0px;
   text-align: center;
-  margin: 10px auto;
 }
 
-.preview img {
-  border: 1px;
-  border-radius: 10px;
-  border-style: solid black;
+.title h1 {
+  margin: 0px auto;
+  font-size: 35px;
+  padding: 0px;
 }
 
-.colours img {
-  width: 225px;
+.title img {
+  position: relative;
+  width: 50px;
+  padding: 5px;
+  bottom: 5px;
 }
 
-.elon-musk img {
-  width: 150px;
+/* The media queries below are for landscape mode for mobile devices */
+
+@media screen and (max-height: 541px) {
+  img.colours {
+    width: 180px;
+  }
+
+  img.elon-musk {
+    width: 180px;
+  }
+
+  img.the-office {
+    width: 190px;
+  }
+
+  .title h1 {
+    font-size: 30px;
+  }
+
+  .title img {
+    width: 35px;
+  }
+
+  .menu h2 {
+    font-size: 25px;
+  }
+
+  .select-options label {
+    font-size: 20px;
+  }
+
+  .select-options select {
+    font-size: 20px;
+  }
 }
 
-.the-office img {
-  width: 150px;
+@media screen and (max-height: 415px) {
+  img.colours {
+    width: 130px;
+  }
+
+  img.elon-musk {
+    width: 130px;
+  }
+
+  img.the-office {
+    width: 140px;
+  }
+
+  .title h1 {
+    font-size: 27px;
+  }
+
+  .title img {
+    width: 32px;
+  }
+
+  .menu h2 {
+    font-size: 22px;
+  }
+
+  .select-options label {
+    font-size: 17px;
+  }
+
+  .select-options select {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-height: 394px) {
+  img.colours {
+    width: 125px;
+  }
+
+  img.elon-musk {
+    width: 125px;
+  }
+
+  img.the-office {
+    width: 135px;
+  }
+}
+
+@media screen and (max-height: 376px) {
+  img.colours {
+    width: 130px;
+  }
+
+  img.elon-musk {
+    width: 130px;
+  }
+
+  img.the-office {
+    width: 135px;
+  }
+
+  .title h1 {
+    font-size: 25px;
+  }
+
+  .title img {
+    width: 30px;
+  }
+
+  .menu h2 {
+    font-size: 20px;
+  }
+
+  .select-options label {
+    font-size: 15px;
+  }
+
+  .select-options select {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-height: 361px) {
+  img.colours {
+    width: 125px;
+  }
+
+  img.elon-musk {
+    width: 125px;
+  }
+
+  img.the-office {
+    width: 130px;
+  }
+
+  .title h1 {
+    font-size: 22px;
+  }
+
+  .title img {
+    width: 27px;
+  }
+
+  .menu h2 {
+    font-size: 17px;
+  }
+
+  .select-options label {
+    font-size: 13px;
+  }
+
+  .select-options select {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-height: 280px) {
+  img.colours {
+    width: 65px;
+  }
+
+  img.elon-musk {
+    width: 80px;
+  }
+
+  img.the-office {
+    width: 70px;
+  }
+
+  .title h1 {
+    font-size: 20px;
+  }
+
+  .title img {
+    width: 25px;
+  }
+
+  .menu h2 {
+    font-size: 15px;
+  }
+
+  .select-options label {
+    font-size: 15px;
+  }
+
+  .select-options select {
+    font-size: 15px;
+  }
+}
+
+/* This is for the Samsung Galaxy Fold portrait mode */
+
+@media screen and (max-width: 281px) {
+  img.colours {
+    width: 150px;
+  }
+
+  img.elon-musk {
+    width: 150px;
+  }
+
+  img.the-office {
+    width: 155px;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title h1 {
+    font-size: 35px;
+  }
+
+  .title img {
+    width: 60px;
+  }
+
+  .menu h2 {
+    font-size: 22px;
+  }
+
+  .select-options label {
+    font-size: 17px;
+  }
+
+  .select-options select {
+    font-size: 17px;
+  }
 }

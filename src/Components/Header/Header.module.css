@@ -1,0 +1,58 @@
+.game-header {
+  font-size: 25px;
+}
+
+.game-header p {
+  text-align: center;
+  margin: 10px;
+}
+
+@media screen and (max-width: 281px) {
+  .game-header {
+    font-size: 20px;
+  }
+}
+
+/* Landscape mode for mobile devices */
+
+@media screen and (max-height: 541px) {
+  .game-header {
+    margin: 175px auto;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .game-header {
+    margin: 125px auto;
+  }
+}
+
+@media screen and (max-height: 415px) {
+  .game-header {
+    margin: 100px auto;
+  }
+}
+
+@media screen and (max-height: 394px) {
+  .game-header {
+    margin: 100px auto;
+  }
+}
+
+@media screen and (max-height: 376px) {
+  .game-header {
+    margin: 100px auto;
+  }
+}
+
+@media screen and (max-height: 361px) {
+  .game-header {
+    margin: 75px auto;
+  }
+}
+
+@media screen and (max-height: 281px) {
+  .game-header {
+    margin: 75px auto;
+  }
+}

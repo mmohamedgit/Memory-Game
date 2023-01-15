@@ -1,13 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
+
+import Header from "../Header/Header.js";
+import Footer from "../Footer/Footer";
+
 import GameButton from "./GameButton";
-import StartSound from "../../assets/sounds/start.mp3";
+import GameLevel from "./GameLevel";
+import GameOver from "./GameOver";
+import GameOptions from "./GameOptions";
+import classes from "./MemoryGame.module.css";
+
+import GameOverSound from "../../assets/sounds/gameover.mp3";
 import ButtonClickSound from "../../assets/sounds/game-button-click.wav";
 import SequenceSound from "../../assets/sounds/sequence.mp3";
-import GameOverSound from "../../assets/sounds/gameover.mp3";
-import GameOver from "./GameOver";
-import classes from "./MemoryGame.module.css";
-import GameLevel from "./GameLevel";
-import GameOptions from "./GameOptions";
+import StartSound from "../../assets/sounds/start.mp3";
 
 const MemoryGame = (props) => {
   const [playedPreviousGame, setPlayedPreviousGame] = useState(false);
@@ -56,17 +61,15 @@ const MemoryGame = (props) => {
     audio.play();
   };
 
-  const restartGame = () => {
-    // setIsGameOver(false);
-
-    startGame();
-  };
-
   const resetPattern = () => {
     setIsGameOver(true);
     setPlayingIndex(0);
     setgamePattern([]);
     setgameStarted(false);
+  };
+
+  const restartGame = () => {
+    startGame();
   };
 
   const startGame = (pattern, gameOverPhotos, theme) => {
@@ -75,7 +78,7 @@ const MemoryGame = (props) => {
 
     console.log(pattern);
 
-    if (pattern && gameOverPhotos) {
+    if (pattern && gameOverPhotos && theme) {
       let chosenPattern = [];
       chosenPattern.push(...pattern);
 
@@ -174,63 +177,63 @@ const MemoryGame = (props) => {
   };
 
   return (
-    <div className={classes.app}>
-      <div className={classes["game-header"]}>
-        <p>
-          Theme:<span>{selectedTheme}</span>
-        </p>
-        <p>
-          Difficulty Level:
-          {selectedPattern.length === 2 && <span>Easy</span>}
-          {selectedPattern.length === 4 && <span>Medium</span>}
-          {selectedPattern.length === 9 && <span>Hard</span>}
-        </p>
-      </div>
+    <Fragment>
+      <div className={classes.app}>
+        <main>
+          {isGameOver && (
+            <GameOver
+              score={currentScore}
+              highScore={highestScore}
+              gameOver={isGameOver}
+              onStartGame={startGame}
+              onRestartGame={restartGame}
+              gameOverImages={gameOverImages}
+            />
+          )}
+          <GameOptions onSelectedPattern={startGame} />
 
-      {isGameOver && (
-        <GameOver
-          score={currentScore}
-          highScore={highestScore}
-          gameOver={isGameOver}
-          onRestartGame={restartGame}
-          onStartGame={startGame}
-          gameOverImages={gameOverImages}
-        />
-      )}
-      <GameOptions onSelectedPattern={startGame} />
-      {!isGameOver && gameStarted && (
-        <GameLevel level={gamePattern} gameOver={isGameOver} />
-      )}
-
-      {!isGameOver && gameStarted && (
-        <div
-          className={`${classes["gamebutton-layout"]} ${
-            classes["tiles-" + selectedPattern.length]
-          }`}
-          tabIndex={0}
-        >
-          {selectedPattern.map((item, index) => {
-            return (
-              <GameButton
-                key={index}
-                id={index}
-                gameStarted={gameStarted}
-                gameOver={isGameOver}
-                gamePattern={gamePattern}
-                button={item}
-                freezeButton={freezeButton}
-                flashButton={flashButton}
-                onButtonClick={buttonClickHandler}
+          {!isGameOver && gameStarted && (
+            <Fragment>
+              <Header
+                theme={selectedTheme}
+                difficulty={selectedPattern.length}
               />
-            );
-          })}
-        </div>
-      )}
+              <GameLevel level={gamePattern} gameOver={isGameOver} />
+              <div
+                className={`${classes["gamebutton-layout"]} ${
+                  classes["tiles-" + selectedPattern.length]
+                }`}
+                tabIndex={0}
+              >
+                {selectedPattern.map((item, index) => {
+                  return (
+                    <GameButton
+                      key={index}
+                      id={index}
+                      gameStarted={gameStarted}
+                      gameOver={isGameOver}
+                      gamePattern={gamePattern}
+                      button={item}
+                      freezeButton={freezeButton}
+                      flashButton={flashButton}
+                      onButtonClick={buttonClickHandler}
+                    />
+                  );
+                })}
+              </div>
+            </Fragment>
+          )}
 
-      {playedPreviousGame && (
-        <h1 className={classes["high-score"]}>HIGH SCORE: {highestScore}</h1>
-      )}
-    </div>
+          {playedPreviousGame && (
+            <h1 className={classes["high-score"]}>
+              HIGH SCORE: {highestScore}
+            </h1>
+          )}
+        </main>
+
+        {!isGameOver && gameStarted && <Footer />}
+      </div>
+    </Fragment>
   );
 };
 

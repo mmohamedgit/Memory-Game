@@ -1,12 +1,11 @@
 footer {
   background-color: black;
   text-align: center;
-  margin-top: auto;
-  padding: 8px;
+  margin: 0px, auto;
 }
 
 .footer-container {
-  margin: auto;
+  margin: 0px, auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,11 +21,10 @@ footer {
   font-weight: bold;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .logo img {
-  width: 1.5rem;
+  width: 2.5rem;
   padding: 0.5rem;
 }
 
@@ -36,6 +34,7 @@ footer {
 }
 
 .social-media a {
+  display: flex;
   color: #fff;
   font-size: 1.5rem;
   text-decoration: none;

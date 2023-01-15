@@ -7,24 +7,14 @@
   background-size: cover;
 }
 
+/* Colour Pattern Theme */
+
 .redColour {
   background-color: red;
 }
 
 .blueColour {
   background-color: blue;
-}
-
-.yellowColour {
-  background-color: yellow;
-}
-
-.greenColour {
-  background-color: green;
-}
-
-.magentaColor {
-  background-color: magenta;
 }
 
 .cyanColour {
@@ -35,6 +25,14 @@
   background-color: darkgray;
 }
 
+.greenColour {
+  background-color: green;
+}
+
+.magentaColor {
+  background-color: magenta;
+}
+
 .purpleColour {
   background-color: purple;
 }
@@ -43,13 +41,15 @@
   background-color: orange;
 }
 
-.tesla {
-  background-image: url("../../assets/images/elon-musk/tesla.webp");
-}
-.iceland {
-  background-image: url("../../assets/images/elon-musk/iceland.webp");
+.yellowColour {
+  background-color: yellow;
 }
 
+/* Elon Musk Pattern Theme */
+
+.cool {
+  background-image: url("../../assets/images/elon-musk/cool.webp");
+}
 .cowboy {
   background-image: url("../../assets/images/elon-musk/cowboy.webp");
 }
@@ -61,37 +61,29 @@
   background-image: url("../../assets/images/elon-musk/crypto.webp");
 }
 
-.neuralink {
-  background-image: url("../../assets/images/elon-musk/neuralink.webp");
-}
-
 .doctor {
   background-image: url("../../assets/images/elon-musk/doctor.webp");
-}
-
-.roadster {
-  background-image: url("../../assets/images/elon-musk/roadster.webp");
-}
-
-.twitter {
-  background-image: url("../../assets/images/elon-musk/twitter.webp");
-}
-
-.wario {
-  background-image: url("../../assets/images/elon-musk/wario.webp");
-}
-
-.spacex {
-  background-image: url("../../assets/images/elon-musk/spacex.webp");
-  background-size: ;
 }
 
 .doubleok {
   background-image: url("../../assets/images/elon-musk/doubleok.webp");
 }
 
-.cool {
-  background-image: url("../../assets/images/elon-musk/cool.webp");
+.iceland {
+  background-image: url("../../assets/images/elon-musk/iceland.webp");
+}
+
+.neuralink {
+  background-image: url("../../assets/images/elon-musk/neuralink.webp");
+}
+
+.roadster {
+  background-image: url("../../assets/images/elon-musk/roadster.webp");
+}
+
+.spacex {
+  background-image: url("../../assets/images/elon-musk/spacex.webp");
+  background-size: ;
 }
 
 .smoking {
@@ -102,12 +94,30 @@
   background-image: url("../../assets/images/elon-musk/stogie2.webp");
 }
 
+.tesla {
+  background-image: url("../../assets/images/elon-musk/tesla.webp");
+}
+
+.twitter {
+  background-image: url("../../assets/images/elon-musk/twitter.webp");
+}
+
+.wario {
+  background-image: url("../../assets/images/elon-musk/wario.webp");
+}
+
+/* The Office Pattern Theme */
+
 .andy {
-  background-image: url("../../assets/images/the-office/andy.png");
+  background-image: url("../../assets/images/the-office/andy.webp");
 }
 
 .angela {
   background-image: url("../../assets/images/the-office/angela.webp");
+}
+
+.creed {
+  background-image: url("../../assets/images/the-office/creed.webp");
 }
 
 .dwight {
@@ -118,16 +128,12 @@
   background-image: url("../../assets/images/the-office/dwight2.webp");
 }
 
-.dwight-overjoyed {
-  background-image: url("../../assets/images/the-office/dwight-overjoyed.gif");
-}
-
 .dwight-neckthing {
   background-image: url("../../assets/images/the-office/dwight-neckthing.gif");
 }
 
-.pam {
-  background-image: url("../../assets/images/the-office/pam.webp");
+.dwight-overjoyed {
+  background-image: url("../../assets/images/the-office/dwight-overjoyed.gif");
 }
 
 .kevin {
@@ -154,12 +160,12 @@
   background-image: url("../../assets/images/the-office/michael-boss.gif");
 }
 
-.toby {
-  background-image: url("../../assets/images/the-office/toby.webp");
+.pam {
+  background-image: url("../../assets/images/the-office/pam.webp");
 }
 
-.stanley {
-  background-image: url("../../assets/images/the-office/stanley.webp");
+.toby {
+  background-image: url("../../assets/images/the-office/toby.webp");
 }
 
 .ryan {
@@ -168,6 +174,10 @@
 
 .scott-boss {
   background-image: url("../../assets/images/the-office/dwight2.webp");
+}
+
+.stanley {
+  background-image: url("../../assets/images/the-office/stanley.webp");
 }
 
 .stanley-crossedarms {
@@ -182,9 +192,7 @@
   background-image: url("../../assets/images/the-office/stanley-himself.gif");
 }
 
-.creed {
-  background-image: url("../../assets/images/the-office/creed.jpg");
-}
+/* Game Button Effects */
 
 .pressed {
   box-shadow: 0 0 20px white;

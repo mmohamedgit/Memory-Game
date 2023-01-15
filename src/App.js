@@ -1,12 +1,11 @@
+import { Fragment } from "react";
 import MemoryGame from "./Components/Game/MemoryGame";
-import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
-    <div>
+    <Fragment>
       <MemoryGame />
-      <Footer />
-    </div>
+    </Fragment>
   );
 }
 

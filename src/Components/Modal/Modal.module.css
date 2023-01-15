@@ -17,7 +17,8 @@
   align-items: center;
   justify-content: center;
   width: clamp(35%, 32rem, 90%);
-  height: min(75%, 34rem);
+  /* height: min(75%, 34rem); */
+  height: clamp(40%, 34rem, 90%);
   background-color: black;
   padding: 0, 2rem;
   border-radius: 14px;

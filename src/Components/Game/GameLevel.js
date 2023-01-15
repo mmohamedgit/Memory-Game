@@ -1,6 +1,7 @@
-import NextLevelSound from "../../assets/sounds/next-level.mp3";
 import { useEffect } from "react";
+import NextLevelSound from "../../assets/sounds/next-level.mp3";
 import classes from "./GameLevel.module.css";
+
 const GameLevel = (props) => {
   const { gameOver, level } = props;
 
@@ -16,7 +17,7 @@ const GameLevel = (props) => {
   }, [level, gameOver]);
 
   return (
-    <div className={classes.header}>
+    <div className={classes.level}>
       {level.length === 0 ? (
         <h2>Get Ready...</h2>
       ) : (

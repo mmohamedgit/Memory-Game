@@ -51,39 +51,34 @@ const GameOptions = (props) => {
       "cool",
       "twitter",
     ],
-    gameOverImages: ["protestor"],
+    gameOverImages: ["elon-disappointed", "elon-mad", "elon-what", "protestor"],
   };
 
   const theOffice = {
     theme: "the-office",
     patternItems: [
-      "jim",
-      "michael",
-      "michael-boss",
+      "andy",
+      "angela",
+      "creed",
       "dwight",
       "dwight2",
       "dwight-overjoyed",
       "dwight-neckthing",
+      "jim",
+      "kelly",
+      "kevin",
+      "kevin2",
+      "michael",
+      "michael-boss",
+      "pam",
+      "ryan",
+      "toby",
       "stanley",
       "stanley-curious",
       "stanley-himself",
       "stanley-crossedarms",
-      "pam",
-      "andy",
-      "angela",
-      "kelly",
-      "ryan",
-      "toby",
-      "kevin",
-      "kevin2",
-      "creed",
     ],
-    gameOverImages: [
-      "scott-no",
-      "scott-disappointed",
-      "scott-holdingback",
-      "scott-dislike",
-    ],
+    gameOverImages: ["dwight-pissed", "scott-mad", "scott-nod", "scott-nooo"],
   };
 
   const patternThemeHandler = (event) => {
@@ -127,7 +122,6 @@ const GameOptions = (props) => {
       .map((a) => a.pattern)
       .slice(0, difficultyAmount);
 
-    // const selectedTheme = pattern.theme;
     const gameOverImages = pattern.gameOverImages;
 
     props.onSelectedPattern(selectedPattern, gameOverImages, theme);
@@ -141,8 +135,16 @@ const GameOptions = (props) => {
     !hideSelection && (
       <Modal>
         <form onSubmit={selectedPatternHandler}>
-          <div className={classes["menu"]}>
-            {!gameOver && <h1>Memory Pattern Game</h1>}
+          <div className={classes.menu}>
+            {!gameOver && (
+              <div className={classes.title}>
+                <h1>Memory Game</h1>
+                <img
+                  src={require(`../../assets/images/logo.svg`).default}
+                  alt="logo"
+                ></img>
+              </div>
+            )}
             <h2>Choose your Settings</h2>
             <div className={classes["select-options"]}>
               <label htmlFor="theme">Pattern Theme:</label>
@@ -156,8 +158,9 @@ const GameOptions = (props) => {
                 <option value="elon-musk">Elon Musk</option>
                 <option value="the-office">The Office</option>
               </select>
-              <div className={`${classes.preview} ${classes[patternTheme]}`}>
+              <div className={classes.preview}>
                 <img
+                  className={classes[patternTheme]}
                   src={require(`../../assets/images/${patternTheme}/preview.gif`)}
                   alt="pattern"
                 ></img>

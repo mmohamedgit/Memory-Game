@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import classes from "./Modal.module.css";
 
+// resusable Modals with a Backdrop for GameOptions & GameOver components
+
 const ModalOverlay = (props) => {
   return (
     <div className={classes.modal}>
@@ -17,6 +19,8 @@ const ModalBackdrop = (props) => {
     </div>
   );
 };
+
+//To render and overlay the Modal at the top-most hierarchy in the body - good for accessibility
 
 const portalElement = document.getElementById("overlay");
 

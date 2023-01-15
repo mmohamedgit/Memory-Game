@@ -1,12 +1,10 @@
 import { useState, useEffect, Fragment } from "react";
-import Modal from "../Modal/Modal";
 import GameOptions from "./GameOptions";
-import classes from "./GameOver.module.css";
+import Modal from "../Modal/Modal";
 import PlayButton from "./PlayButton";
+import classes from "./GameOver.module.css";
 
 const GameOver = (props) => {
-  //part 1 - timeout the same as the fade-in-out effect then part 2
-
   const [showPlayAgain, setShowPlayAgain] = useState(false);
   const [showGameOptions, setShowGameOptions] = useState(false);
 
@@ -15,8 +13,8 @@ const GameOver = (props) => {
     score,
     highScore,
     gameOver,
-    onRestartGame,
     onStartGame,
+    onRestartGame,
   } = props;
 
   let gameOverImgFormat;
@@ -26,31 +24,37 @@ const GameOver = (props) => {
   const randomGameOverImage = gameOverImages[randomNumber];
 
   switch (randomGameOverImage) {
-    case "scott-no":
+    case "elon-disappointed":
+      gameOverImgFormat = "jpg";
+      break;
+    case "elon-mad":
       gameOverImgFormat = "gif";
       break;
-
-    case "scott-dislike":
+    case "elon-what":
       gameOverImgFormat = "gif";
       break;
-
-    case "scott-disappointed":
-      gameOverImgFormat = "gif";
-      break;
-
-    case "scott-holdingback":
-      gameOverImgFormat = "gif";
-      break;
-    case "scott-no-img":
+    case "protestor":
       gameOverImgFormat = "webp";
       break;
+    case "dwight-pissed":
+      gameOverImgFormat = "gif";
+      break;
+    case "scott-crying":
+      gameOverImgFormat = "gif";
+      break;
+
+    case "scott-mad":
+      gameOverImgFormat = "gif";
+      break;
+
+    case "scott-nooo":
+      gameOverImgFormat = "gif";
+      break;
+
     case "x-mark":
       gameOverImgFormat = "webp";
       break;
 
-    case "protestor":
-      gameOverImgFormat = "webp";
-      break;
     default:
       break;
   }
@@ -74,7 +78,7 @@ const GameOver = (props) => {
     return (
       <div className={classes.first}>
         <h2 className={classes.title}>GAME OVER!</h2>
-        <div className={classes[randomGameOverImage]}>
+        <div className={`${classes.bounce} ${classes[randomGameOverImage]}`}>
           <img
             src={require(`../../assets/images/gameover/${randomGameOverImage}.${gameOverImgFormat}`)}
             alt="game-over"
@@ -173,7 +177,6 @@ const GameOver = (props) => {
             Genius Level: <span>{geniusLevel}</span>
           </div>
           <img
-            className={classes.img}
             src={require(`../../assets/images/geniuses/${geniusLevel}${imgFormat}`)}
             alt="genius-img"
           ></img>

@@ -17,6 +17,18 @@
   display: flex;
 }
 
+.gameover .first img {
+  /* width: 12.5rem; */
+  animation: spin 1s;
+  border-radius: 2%;
+}
+
+.gameover .second img {
+  border-radius: 2%;
+  width: 18.75rem;
+  margin: 0.5rem auto;
+}
+
 .title {
   font-size: 3.75rem;
   margin-top: 0;
@@ -40,46 +52,43 @@
   align-items: center;
 }
 
-.gameover .genius img {
-  width: 18.75rem;
-  height: 12.5rem;
-  object-fit: contain;
-  margin: 0.5rem auto;
+/* Elon Musk Theme */
+
+.elon-disappointed img {
+  width: 30rem;
 }
 
-.x-mark img {
-  width: 12.5rem;
-  border-radius: 2%;
+.elon-mad img {
+  width: 25rem;
+  position: relative;
+  right: 20px;
+}
+
+.elon-what img {
+  width: 30rem;
 }
 
 .protestor img {
-  width: 20rem;
-  border-radius: 2%;
+  width: 30rem;
+  animation: bounce 3s linear;
 }
 
-.scott-no img {
+/* The Office Theme */
+
+.dwight-pissed img {
   width: 20rem;
-  border-radius: 2%;
 }
 
-.scott-no-img img {
+.scott-crying img {
   width: 20rem;
-  border-radius: 2%;
 }
 
-.scott-dislike img {
-  width: 25rem;
-  border-radius: 2%;
+.scott-mad img {
+  width: 20rem;
 }
 
-.scott-disappointed img {
+.scott-nooo img {
   width: 20rem;
-  border-radius: 2%;
-}
-
-.scott-holdingback img {
-  width: 20rem;
-  border-radius: 2%;
 }
 
 .genius-level {
@@ -92,3 +101,42 @@
   font-weight: 100;
   margin-bottom: 1rem;
 }
+
+/* .bounce {
+  animation: bounce 3s linear;
+} */
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: scale(3);
+  }
+
+  25% {
+    opacity: 1;
+    transform: scale(2.875);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(2.25);
+  }
+
+  75% {
+    opacity: 1;
+    transform: scale(1.625);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* @keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+} */
