@@ -25,13 +25,16 @@ const GameOver = (props) => {
 
   switch (randomGameOverImage) {
     case "elon-disappointed":
-      gameOverImgFormat = "jpg";
+      gameOverImgFormat = "webp";
       break;
     case "elon-mad":
-      gameOverImgFormat = "gif";
+      gameOverImgFormat = "webp";
+      break;
+    case "elon-really":
+      gameOverImgFormat = "webp";
       break;
     case "elon-what":
-      gameOverImgFormat = "gif";
+      gameOverImgFormat = "webp";
       break;
     case "protestor":
       gameOverImgFormat = "webp";
@@ -78,8 +81,9 @@ const GameOver = (props) => {
     return (
       <div className={classes.first}>
         <h2 className={classes.title}>GAME OVER!</h2>
-        <div className={`${classes.bounce} ${classes[randomGameOverImage]}`}>
+        <div className={classes.bounce}>
           <img
+            className={classes[randomGameOverImage]}
             src={require(`../../assets/images/gameover/${randomGameOverImage}.${gameOverImgFormat}`)}
             alt="game-over"
           ></img>
@@ -88,6 +92,7 @@ const GameOver = (props) => {
     );
   };
 
+  let geniusStyle;
   let geniusLevel;
   let geniusLevelMessage;
   let imgFormat;
@@ -98,6 +103,7 @@ const GameOver = (props) => {
     case 0:
       geniusLevel = "Patrick Star";
       geniusLevelMessage = "Are you even trying???";
+      geniusStyle = "patrick";
       imgFormat = ".jpg";
       break;
 
@@ -105,6 +111,7 @@ const GameOver = (props) => {
     case 2:
       geniusLevel = "Novice";
       geniusLevelMessage = "You now know how to play this game!";
+      geniusStyle = "novice";
       imgFormat = ".webp";
       break;
 
@@ -112,6 +119,7 @@ const GameOver = (props) => {
     case 4:
       geniusLevel = "Unexpected Genius";
       geniusLevelMessage = "Just like that, you went beyond our expectations!";
+      geniusStyle = "unexpected";
       imgFormat = ".gif";
       break;
 
@@ -119,6 +127,7 @@ const GameOver = (props) => {
     case 6:
       geniusLevel = "Underrated Genius";
       geniusLevelMessage = "Low-key smart just like Christopher Langan.";
+      geniusStyle = "underrated";
       imgFormat = ".jpg";
       break;
 
@@ -127,6 +136,7 @@ const GameOver = (props) => {
       geniusLevel = "Isaac Newton";
       geniusLevelMessage =
         "The genius apple doesn't fall far from the genius tree.";
+      geniusStyle = "isaac";
       imgFormat = ".jpg";
       break;
 
@@ -134,6 +144,7 @@ const GameOver = (props) => {
     case 10:
       geniusLevel = "Garry Kasparov";
       geniusLevelMessage = "You predicted this win. Here's my queen, take it.";
+      geniusStyle = "garry";
       imgFormat = ".jpg";
       break;
 
@@ -141,6 +152,7 @@ const GameOver = (props) => {
     case 12:
       geniusLevel = "Nikola Tesla";
       geniusLevelMessage = "Here's a shocker: You are electrifying!";
+      geniusStyle = "nikola";
       imgFormat = ".jpg";
       break;
 
@@ -148,6 +160,7 @@ const GameOver = (props) => {
     case 14:
       geniusLevel = "Leonardo da Vinci";
       geniusLevelMessage = "Fight with Michelangelo? It will end as a...draw.";
+      geniusStyle = "leonardo";
       imgFormat = ".webp";
       break;
 
@@ -155,13 +168,15 @@ const GameOver = (props) => {
     case 16:
       geniusLevel = "Albert Einstein";
       geniusLevelMessage = "Want to marry your cousin? It's all relative baby.";
+      geniusStyle = "albert";
       imgFormat = ".jpg";
       break;
 
     default:
       geniusLevel = "Galaxy Brain";
       geniusLevelMessage =
-        "Congrats, we officially declare your genius at galaxy-brain level. Highest level reached.";
+        "Congrats, we officially declare your genius at galaxy-brain level. Highest level reached!";
+      geniusStyle = "galaxy";
       imgFormat = ".webp";
       break;
   }
@@ -170,19 +185,22 @@ const GameOver = (props) => {
     return (
       <div className={classes.second}>
         <div className={classes["score-title"]}>
-          Highest Score: <span className={classes.score}>{highScore}pts</span>
+          Highest Score: <span className={classes.score}>{highScore} PTS</span>
         </div>
         <div className={classes.genius}>
           <div className={classes["genius-level"]}>
             Genius Level: <span>{geniusLevel}</span>
           </div>
           <img
+            className={classes[geniusStyle]}
             src={require(`../../assets/images/geniuses/${geniusLevel}${imgFormat}`)}
             alt="genius-img"
           ></img>
-          <div className={classes.message}>{geniusLevelMessage}</div>
+          <div className={`${classes.message} ${classes[geniusStyle]}`}>
+            {geniusLevelMessage}
+          </div>
         </div>
-        <div>
+        <div className={classes.btn}>
           <PlayButton
             gameOver={gameOver}
             onClick={onRestartGame}

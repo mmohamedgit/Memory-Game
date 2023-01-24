@@ -51,7 +51,13 @@ const GameOptions = (props) => {
       "cool",
       "twitter",
     ],
-    gameOverImages: ["elon-disappointed", "elon-mad", "elon-what", "protestor"],
+    gameOverImages: [
+      "elon-disappointed",
+      "elon-mad",
+      "elon-really",
+      "elon-what",
+      "protestor",
+    ],
   };
 
   const theOffice = {
@@ -78,7 +84,12 @@ const GameOptions = (props) => {
       "stanley-himself",
       "stanley-crossedarms",
     ],
-    gameOverImages: ["dwight-pissed", "scott-mad", "scott-nod", "scott-nooo"],
+    gameOverImages: [
+      "dwight-pissed",
+      "scott-crying",
+      "scott-mad",
+      "scott-nooo",
+    ],
   };
 
   const patternThemeHandler = (event) => {

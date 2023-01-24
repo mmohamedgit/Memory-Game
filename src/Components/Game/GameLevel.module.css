@@ -7,6 +7,8 @@
   margin: 25px auto;
 }
 
+/* Mobile responsiveness for landscape mode */
+
 @media screen and (max-height: 545px) {
   .level {
     position: absolute;

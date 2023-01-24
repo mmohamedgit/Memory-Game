@@ -7,13 +7,15 @@
   margin: 10px;
 }
 
+/* Mobile responsiveness for portrait mode - Samsung Galaxy Fold*/
+
 @media screen and (max-width: 281px) {
   .game-header {
     font-size: 20px;
   }
 }
 
-/* Landscape mode for mobile devices */
+/* Mobile responsiveness for landscape mode */
 
 @media screen and (max-height: 541px) {
   .game-header {

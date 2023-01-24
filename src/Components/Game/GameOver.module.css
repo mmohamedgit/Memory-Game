@@ -18,88 +18,175 @@
 }
 
 .gameover .first img {
-  /* width: 12.5rem; */
   animation: spin 1s;
   border-radius: 2%;
 }
 
 .gameover .second img {
   border-radius: 2%;
-  width: 18.75rem;
-  margin: 0.5rem auto;
+  margin: 1rem auto;
 }
 
 .title {
   font-size: 3.75rem;
   margin-top: 0;
   margin-bottom: 1rem;
+  color: red;
 }
 
 .score-title {
   font-size: 3rem;
-  font-weight: 600;
 }
 
 .score {
-  font-size: 4.25rem;
+  font-size: 3.25rem;
   color: yellow;
 }
 
 .genius {
   display: flex;
   flex-direction: column;
-  font-size: 1.75rem;
   align-items: center;
+}
+
+.genius-level {
+  margin: 2rem, auto;
+  font-size: 1.75rem;
+}
+
+.genius-level span {
+  color: lightskyblue;
+}
+
+img.patrick {
+  width: 20rem;
+}
+
+img.novice {
+  width: 16rem;
+}
+
+img.unexpected {
+  width: 25rem;
+}
+
+img.underrated {
+  width: 12rem;
+}
+
+img.isaac {
+  width: 22rem;
+}
+
+img.garry {
+  width: 20rem;
+}
+
+img.nikola {
+  width: 10rem;
+}
+
+img.leonardo {
+  width: 23rem;
+}
+
+img.albert {
+  width: 13rem;
+}
+
+img.galaxy {
+  width: 16rem;
+}
+
+.message {
+  font-size: 1.5rem;
+  width: 100%;
+  color: greenyellow;
+}
+
+.message.unexpected {
+  width: 60%;
+}
+
+.message.underrated {
+  width: 60%;
+}
+
+.message.isaac {
+  width: 55%;
+}
+
+.message.garry {
+  width: 55%;
+}
+
+.message.nikola {
+  width: 50%;
+}
+
+.message.leonardo {
+  width: 55%;
+}
+
+.message.albert {
+  width: 60%;
+}
+
+.message.galaxy {
+  font-size: 1.25rem;
+  width: 55%;
+  font-style: italic;
+  color: gold;
+}
+
+.btn button {
+  margin: 0.5rem auto 1rem 1rem;
+}
+
+/* Colour Theme */
+
+img.x-mark {
+  width: 15rem;
 }
 
 /* Elon Musk Theme */
 
-.elon-disappointed img {
-  width: 30rem;
-}
-
-.elon-mad img {
+img.elon-disappointed {
   width: 25rem;
-  position: relative;
-  right: 20px;
 }
 
-.elon-what img {
-  width: 30rem;
+img.elon-mad {
+  width: 25rem;
 }
 
-.protestor img {
-  width: 30rem;
+img.elon-really {
+  width: 25rem;
+}
+img.elon-what {
+  width: 20rem;
+}
+
+img.protestor {
+  width: 20rem;
   animation: bounce 3s linear;
 }
 
 /* The Office Theme */
 
-.dwight-pissed img {
+img.dwight-pissed {
   width: 20rem;
 }
 
-.scott-crying img {
+img.scott-crying {
   width: 20rem;
 }
 
-.scott-mad img {
+img.scott-mad {
   width: 20rem;
 }
 
-.scott-nooo img {
+img.scott-nooo {
   width: 20rem;
-}
-
-.genius-level {
-  margin: 1rem, auto, auto;
-}
-
-.message {
-  font-size: 1.25rem;
-  width: 75%;
-  font-weight: 100;
-  margin-bottom: 1rem;
 }
 
 /* .bounce {
@@ -140,3 +227,1131 @@
     transform: rotate(720deg);
   }
 } */
+
+/* Mobile responsiveness for portrait mode */
+
+@media screen and (max-width: 415px) {
+  /* Gameover modal part 1 */
+
+  /* Elon Musk Theme */
+
+  img.elon-disappointed {
+    width: 20rem;
+  }
+  img.elon-mad {
+    width: 20rem;
+  }
+  img.elon-really {
+    width: 20rem;
+  }
+  img.elon-what {
+    width: 20rem;
+  }
+  img.protestor {
+    width: 20rem;
+  }
+
+  /* The Office Theme */
+
+  img.dwight-pissed {
+    width: 20rem;
+  }
+  img.scott-crying {
+    width: 20rem;
+  }
+  img.scott-mad {
+    width: 20rem;
+  }
+  img.scott-nooo {
+    width: 20rem;
+  }
+
+  /* Gameover modal part 2*/
+
+  .score-title {
+    font-size: 2.25rem;
+  }
+  .score {
+    font-size: 2.75rem;
+  }
+
+  .genius-level {
+    font-size: 1.5rem;
+  }
+
+  .btn button {
+    width: 45%;
+    margin: 1rem auto 0rem 0.5rem;
+  }
+
+  img.patrick {
+    width: 19rem;
+  }
+
+  img.novice {
+    width: 15rem;
+  }
+
+  img.unexpected {
+    width: 20rem;
+  }
+
+  img.underrated {
+    width: 12rem;
+  }
+
+  img.isaac {
+    width: 19rem;
+  }
+
+  img.garry {
+    width: 19rem;
+  }
+
+  img.nikola {
+    width: 12rem;
+  }
+
+  img.leonardo {
+    width: 19rem;
+  }
+
+  img.albert {
+    width: 13rem;
+  }
+
+  img.galaxy {
+    width: 16rem;
+  }
+
+  .message {
+    font-size: 1.25rem;
+  }
+
+  .message.underrated {
+    width: 60%;
+  }
+  .message.unexpected {
+    width: 60%;
+  }
+
+  .message.isaac {
+    width: 70%;
+  }
+
+  .message.garry {
+    width: 60%;
+  }
+
+  .message.leonardo {
+    width: 60%;
+  }
+
+  .message.albert {
+    width: 70%;
+  }
+
+  .message.galaxy {
+    font-size: 1.25rem;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 394px) {
+  img.elon-disappointed {
+    width: 19rem;
+  }
+  img.elon-mad {
+    width: 19rem;
+  }
+  img.elon-really {
+    width: 19rem;
+  }
+  img.elon-what {
+    width: 19rem;
+  }
+  img.protestor {
+    width: 19rem;
+  }
+
+  img.dwight-pissed {
+    width: 19rem;
+  }
+
+  img.scott-crying {
+    width: 19rem;
+  }
+
+  img.scott-mad {
+    width: 19rem;
+  }
+
+  img.scott-nooo {
+    width: 19rem;
+  }
+
+  /* Gameover modal part 2*/
+
+  .score-title {
+    font-size: 2rem;
+  }
+  .score {
+    font-size: 2.5rem;
+  }
+
+  .genius-level {
+    font-size: 1.25rem;
+  }
+
+  img.unexpected {
+    width: 19rem;
+  }
+
+  img.isaac {
+    width: 18rem;
+  }
+
+  img.garry {
+    width: 18rem;
+  }
+
+  .message.unexpected {
+    width: 70%;
+  }
+
+  .message.leonardo {
+    width: 62%;
+  }
+
+  .message.galaxy {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  img.elon-disappointed {
+    width: 18rem;
+  }
+  img.elon-mad {
+    width: 18rem;
+  }
+  img.elon-really {
+    width: 18rem;
+  }
+  img.elon-what {
+    width: 18rem;
+  }
+  img.protestor {
+    width: 18rem;
+  }
+
+  img.dwight-pissed {
+    width: 18rem;
+  }
+
+  img.scott-crying {
+    width: 18rem;
+  }
+
+  img.scott-mad {
+    width: 18rem;
+  }
+
+  img.scott-nooo {
+    width: 18rem;
+  }
+
+  /* Gameover modal part 2*/
+
+  .message.garry {
+    width: 70%;
+  }
+
+  .message.leonardo {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 361px) {
+  img.elon-disappointed {
+    width: 17rem;
+  }
+  img.elon-mad {
+    width: 17rem;
+  }
+  img.elon-really {
+    width: 17rem;
+  }
+  img.elon-what {
+    width: 17rem;
+  }
+  img.protestor {
+    width: 17rem;
+  }
+
+  img.dwight-pissed {
+    width: 17rem;
+  }
+
+  img.scott-crying {
+    width: 17rem;
+  }
+
+  img.scott-mad {
+    width: 17rem;
+  }
+
+  img.scott-nooo {
+    width: 17rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  /* Gameover modal part 2*/
+
+  img.patrick {
+    width: 17rem;
+  }
+
+  img.unexpected {
+    width: 17rem;
+  }
+
+  img.isaac {
+    width: 17rem;
+  }
+
+  img.garry {
+    width: 17rem;
+  }
+
+  img.nikola {
+    width: 11rem;
+  }
+
+  img.leonardo {
+    width: 18rem;
+  }
+
+  .message.novice {
+    width: 65%;
+  }
+
+  .message.underrated {
+    width: 70%;
+  }
+  .message.isaac {
+    width: 80%;
+  }
+
+  .message.nikola {
+    width: 55%;
+  }
+
+  .message.leonardo {
+    width: 70%;
+  }
+
+  .message.albert {
+    width: 80%;
+  }
+
+  .message.galaxy {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 281px) {
+  img.x-mark {
+    width: 12rem;
+  }
+
+  img.elon-disappointed {
+    width: 14rem;
+  }
+  img.elon-mad {
+    width: 14rem;
+  }
+  img.elon-really {
+    width: 14rem;
+  }
+  img.elon-what {
+    width: 14rem;
+  }
+  img.protestor {
+    width: 14rem;
+  }
+
+  img.dwight-pissed {
+    width: 14rem;
+  }
+
+  img.scott-crying {
+    width: 14rem;
+  }
+
+  img.scott-mad {
+    width: 14rem;
+  }
+
+  img.scott-nooo {
+    width: 14rem;
+  }
+
+  .title {
+    font-size: 4.5rem;
+  }
+
+  /* Gameover modal part 2*/
+
+  .score-title {
+    width: 80%;
+    margin: auto;
+  }
+
+  .genius-level {
+    font-size: 1.5rem;
+  }
+
+  .genius-level span {
+    display: block;
+  }
+
+  .btn button {
+    width: 40%;
+  }
+
+  .btn button span {
+    font-size: 1.25rem;
+  }
+
+  img.patrick {
+    width: 13rem;
+  }
+
+  img.novice {
+    width: 9.5rem;
+  }
+
+  img.unexpected {
+    width: 13rem;
+  }
+
+  img.underrated {
+    width: 8.5rem;
+  }
+
+  img.isaac {
+    width: 13rem;
+  }
+
+  img.garry {
+    width: 13rem;
+  }
+
+  img.nikola {
+    width: 7rem;
+  }
+
+  img.leonardo {
+    width: 13rem;
+  }
+
+  img.albert {
+    width: 9rem;
+  }
+
+  img.galaxy {
+    width: 12rem;
+  }
+
+  .message.novice {
+    width: 65%;
+  }
+
+  .message.unexpected {
+    width: 65%;
+  }
+
+  .message.underrated {
+    width: 80%;
+  }
+
+  .message.isaac {
+    width: 70%;
+  }
+
+  .message.garry {
+    width: 90%;
+  }
+
+  .message.nikola {
+    width: 70%;
+  }
+
+  .message.leonardo {
+    width: 90%;
+  }
+
+  .message.albert {
+    width: 100%;
+  }
+
+  .message.galaxy {
+    width: 90%;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile responsiveness for landscape mode */
+
+@media screen and (max-height: 541px) {
+  .score-title {
+    font-size: 3.5rem;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+  }
+
+  .score {
+    font-size: 3.5rem;
+  }
+
+  .genius {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .second .genius img {
+    position: absolute;
+  }
+
+  .genius-level {
+    font-size: 1.5rem;
+    position: relative;
+    left: 9rem;
+    bottom: 2rem;
+  }
+
+  .genius-level span {
+    display: block;
+  }
+
+  img.patrick {
+    width: 15.5rem;
+    left: 2.25rem;
+    top: 7.5rem;
+  }
+
+  img.novice {
+    width: 14.5rem;
+    left: 3rem;
+    bottom: 7em;
+  }
+
+  img.unexpected {
+    width: 16rem;
+    right: 14.5rem;
+    bottom: 11rem;
+  }
+
+  img.underrated {
+    width: 14rem;
+    left: 3rem;
+    bottom: 6rem;
+  }
+
+  img.isaac {
+    width: 17rem;
+    left: 2rem;
+    top: 7.5rem;
+  }
+
+  img.garry {
+    width: 16.5rem;
+    left: 2rem;
+    top: 6.75rem;
+  }
+
+  img.nikola {
+    width: 12rem;
+    left: 4.5rem;
+    top: 5rem;
+  }
+
+  img.leonardo {
+    width: 16.5rem;
+    left: 1.5rem;
+    top: 7.5rem;
+  }
+
+  img.albert {
+    width: 12rem;
+    left: 5rem;
+    top: 6rem;
+  }
+
+  img.galaxy {
+    width: 15rem;
+    left: 3.5rem;
+    top: 5.5rem;
+  }
+
+  .message {
+    position: relative;
+    left: 9rem;
+    top: 0rem;
+    font-size: 1.25rem;
+  }
+
+  .message.patrick {
+    width: 100%;
+  }
+
+  .message.novice {
+    width: 38%;
+  }
+
+  .message.unexpected {
+    width: 100%;
+    left: 0rem;
+    top: 2.5rem;
+  }
+
+  .message.underrated {
+    width: 45%;
+  }
+
+  .message.isaac {
+    width: 100%;
+    left: 0rem;
+    top: 3rem;
+  }
+
+  .message.garry {
+    width: 100%;
+    left: 0rem;
+    top: 3rem;
+  }
+
+  .message.nikola {
+    width: 38%;
+  }
+
+  .message.leonardo {
+    width: 100%;
+    left: 0rem;
+    top: 3rem;
+  }
+
+  .message.albert {
+    width: 100%;
+    left: 0rem;
+    top: 3rem;
+  }
+
+  .message.galaxy {
+    width: 90%;
+    font-size: 1rem;
+    left: 0rem;
+    top: 3rem;
+  }
+
+  .btn button {
+    width: 40%;
+    height: 4rem;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+  }
+
+  .btn button span {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-height: 415px) {
+  .score-title {
+    font-size: 3rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .score {
+    font-size: 3rem;
+  }
+
+  .genius-level {
+    font-size: 1.5rem;
+    left: 9rem;
+    bottom: 1rem;
+  }
+
+  img.patrick {
+    width: 14.5rem;
+    left: 3.25rem;
+    top: 4.5rem;
+  }
+
+  img.novice {
+    width: 12.5em;
+    left: 4rem;
+    bottom: 5rem;
+  }
+
+  img.unexpected {
+    width: 16rem;
+    right: 14.5rem;
+    bottom: 8rem;
+  }
+
+  img.underrated {
+    width: 11.5rem;
+    left: 4.5rem;
+    bottom: 5rem;
+  }
+
+  img.isaac {
+    width: 15.5rem;
+    left: 3rem;
+    top: 5em;
+  }
+
+  img.garry {
+    width: 15rem;
+    left: 3rem;
+    top: 4.25rem;
+  }
+
+  img.nikola {
+    width: 10rem;
+    left: 5rem;
+    top: 3.25em;
+  }
+
+  img.leonardo {
+    width: 15rem;
+    left: 2.5rem;
+    top: 5rem;
+  }
+
+  img.albert {
+    width: 10rem;
+    left: 5rem;
+    top: 4rem;
+  }
+
+  img.galaxy {
+    width: 13rem;
+    left: 4rem;
+    top: 3.75rem;
+  }
+
+  .message {
+    left: 9rem;
+    top: 0rem;
+    font-size: 1rem;
+  }
+
+  .message.novice {
+    width: 35%;
+  }
+
+  .message.unexpected {
+    width: 100%;
+    left: 0rem;
+    top: 2rem;
+  }
+
+  .message.underrated {
+    width: 45%;
+  }
+
+  .message.isaac {
+    width: 100%;
+    top: 2.25rem;
+  }
+
+  .message.garry {
+    width: 100%;
+    left: 0rem;
+    top: 2.5rem;
+  }
+
+  .message.nikola {
+    width: 35%;
+  }
+
+  .message.leonardo {
+    width: 100%;
+    top: 2.25rem;
+  }
+
+  .message.albert {
+    width: 100%;
+    top: 2.5rem;
+  }
+
+  .message.galaxy {
+    width: 90%;
+    font-size: 1rem;
+    top: 2.5rem;
+  }
+
+  .btn button {
+    width: 40%;
+    height: 3.5rem;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+  }
+
+  .btn button span {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-height: 394px) {
+  .score-title {
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .score {
+    font-size: 3rem;
+  }
+
+  .genius-level {
+    font-size: 1.5rem;
+    left: 9rem;
+    bottom: 1rem;
+  }
+
+  img.patrick {
+    width: 14rem;
+    /* left: 3.25rem;
+    top: 4.5rem; */
+  }
+
+  img.novice {
+    width: 12rem;
+    left: 4.25rem;
+    bottom: 4.5rem;
+  }
+
+  img.unexpected {
+    width: 15rem;
+    right: 14.5rem;
+    bottom: 7.75rem;
+  }
+
+  img.underrated {
+    width: 11rem;
+    left: 4.5rem;
+    bottom: 4.5rem;
+  }
+
+  img.isaac {
+    width: 15rem;
+    left: 3.25rem;
+    top: 4.25rem;
+  }
+
+  img.garry {
+    width: 14.5rem;
+    left: 3.25rem;
+    top: 3.5rem;
+  }
+
+  img.nikola {
+    width: 9.5rem;
+    left: 5.25rem;
+    top: 2.75rem;
+  }
+
+  img.leonardo {
+    width: 14.5rem;
+    left: 2.75rem;
+    top: 4.25rem;
+  }
+
+  img.albert {
+    width: 9.5rem;
+    left: 5.25rem;
+    top: 3.75rem;
+  }
+
+  img.galaxy {
+    width: 12.5rem;
+    left: 4.25rem;
+    top: 3rem;
+  }
+  /* 
+  .message {
+    left: 9rem;
+    top: 0rem;
+    font-size: 1rem;
+  } */
+
+  .message.novice {
+    width: 35%;
+  }
+
+  .message.unexpected {
+    width: 100%;
+    left: 0rem;
+    top: 2rem;
+  }
+
+  .message.underrated {
+    width: 45%;
+  }
+
+  .message.isaac {
+    width: 100%;
+    top: 2.25rem;
+  }
+
+  .message.garry {
+    width: 100%;
+    left: 0rem;
+    top: 2.5rem;
+  }
+
+  .message.nikola {
+    width: 35%;
+  }
+
+  .message.leonardo {
+    width: 100%;
+    top: 2.25rem;
+  }
+
+  .message.albert {
+    width: 100%;
+    top: 2.5rem;
+  }
+
+  .message.galaxy {
+    width: 90%;
+    font-size: 1rem;
+    top: 2.5rem;
+  }
+
+  .btn button {
+    width: 40%;
+    height: 3.5rem;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+  }
+
+  /* .btn button span {
+    font-size: 1.5rem;
+  } */
+}
+
+@media screen and (max-height: 376px) {
+  .score-title {
+    font-size: 2.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* .score {
+    font-size: 3rem;
+  } */
+
+  /* .genius-level {
+    font-size: 1.5rem;
+    left: 9rem;
+    bottom: 1rem;
+  } */
+
+  img.patrick {
+    width: 13rem;
+    left: 4rem;
+    top: 4rem;
+  }
+
+  img.novice {
+    width: 11.25rem;
+    left: 4.25rem;
+    bottom: 4.5rem;
+  }
+
+  img.unexpected {
+    width: 15rem;
+    right: 14.5rem;
+    bottom: 7.75rem;
+  }
+
+  img.underrated {
+    width: 10.25rem;
+    left: 5rem;
+    bottom: 4.5rem;
+  }
+
+  img.isaac {
+    width: 14.5rem;
+    left: 3.5rem;
+    top: 3.75rem;
+  }
+
+  img.garry {
+    width: 13rem;
+    left: 3.75rem;
+    top: 3.25rem;
+  }
+
+  img.nikola {
+    width: 8.5rem;
+    left: 5.5rem;
+    top: 2.75rem;
+  }
+
+  img.leonardo {
+    width: 13.5rem;
+    left: 3.25rem;
+    top: 4rem;
+  }
+
+  img.albert {
+    width: 8.5rem;
+    left: 5.5rem;
+    top: 3.5rem;
+  }
+
+  img.galaxy {
+    width: 11.5rem;
+    left: 4.5rem;
+    top: 2.75rem;
+  }
+
+  .message.novice {
+    width: 35%;
+  }
+
+  .message.unexpected {
+    width: 100%;
+    left: 0rem;
+    top: 2rem;
+  }
+
+  .message.underrated {
+    width: 45%;
+  }
+
+  .message.isaac {
+    width: 100%;
+    top: 2.25rem;
+  }
+
+  .message.garry {
+    width: 100%;
+    left: 0rem;
+    top: 2.5rem;
+  }
+
+  .message.nikola {
+    width: 36%;
+  }
+
+  .message.leonardo {
+    width: 100%;
+    top: 2.25rem;
+  }
+
+  .message.albert {
+    width: 100%;
+    top: 2.5rem;
+  }
+
+  .message.galaxy {
+    width: 90%;
+    font-size: 1rem;
+    top: 2.5rem;
+  }
+
+  .btn button {
+    width: 40%;
+    height: 3.5rem;
+    margin-bottom: 2.25rem;
+    margin-top: 3rem;
+  }
+
+  /* .btn button span {
+    font-size: 1.5rem;
+  } */
+}
+
+@media screen and (max-height: 361px) {
+  .score-title {
+    font-size: 2.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* .score {
+    font-size: 3rem;
+  } */
+
+  /* .genius-level {
+    font-size: 1.5rem;
+    left: 9rem;
+    bottom: 1rem;
+  } */
+
+  img.patrick {
+    top: 3.5rem;
+  }
+
+  img.novice {
+    left: 4.5rem;
+    bottom: 4.25rem;
+  }
+
+  img.unexpected {
+    right: 14.25rem;
+    bottom: 6.75rem;
+  }
+
+  img.underrated {
+    left: 5.25rem;
+    bottom: 3.75rem;
+  }
+
+  img.isaac {
+    left: 3.75rem;
+    top: 3.25rem;
+  }
+
+  img.garry {
+    left: 4rem;
+    top: 3rem;
+  }
+
+  img.nikola {
+    top: 2.75rem;
+  }
+
+  img.leonardo {
+    left: 3.5rem;
+    top: 3.75rem;
+  }
+
+  img.albert {
+    left: 5.75rem;
+    top: 3.25rem;
+  }
+
+  img.galaxy {
+    left: 4.75rem;
+    top: 2.5rem;
+  }
+
+  .btn button {
+    width: 40%;
+    height: 3rem;
+    margin-bottom: 2.25rem;
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-height: 280px) {
+}

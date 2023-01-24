@@ -71,7 +71,48 @@ img.the-office {
   bottom: 5px;
 }
 
-/* The media queries below are for landscape mode for mobile devices */
+/* Mobile responsiveness for portrait mode - Samsung Galaxy Fold*/
+
+@media screen and (max-width: 281px) {
+  img.colours {
+    width: 150px;
+  }
+
+  img.elon-musk {
+    width: 150px;
+  }
+
+  img.the-office {
+    width: 155px;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title h1 {
+    font-size: 35px;
+  }
+
+  .title img {
+    width: 60px;
+  }
+
+  .menu h2 {
+    font-size: 22px;
+  }
+
+  .select-options label {
+    font-size: 17px;
+  }
+
+  .select-options select {
+    font-size: 17px;
+  }
+}
+
+/* Mobile responsiveness for landscape mode */
 
 @media screen and (max-height: 541px) {
   img.colours {
@@ -254,46 +295,5 @@ img.the-office {
 
   .select-options select {
     font-size: 15px;
-  }
-}
-
-/* This is for the Samsung Galaxy Fold portrait mode */
-
-@media screen and (max-width: 281px) {
-  img.colours {
-    width: 150px;
-  }
-
-  img.elon-musk {
-    width: 150px;
-  }
-
-  img.the-office {
-    width: 155px;
-  }
-
-  .title {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .title h1 {
-    font-size: 35px;
-  }
-
-  .title img {
-    width: 60px;
-  }
-
-  .menu h2 {
-    font-size: 22px;
-  }
-
-  .select-options label {
-    font-size: 17px;
-  }
-
-  .select-options select {
-    font-size: 17px;
   }
 }

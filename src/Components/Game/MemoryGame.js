@@ -178,7 +178,7 @@ const MemoryGame = (props) => {
 
   return (
     <Fragment>
-      <div className={classes.app}>
+      <div className={`${classes.app} ${isGameOver ? classes.gameover : ""}`}>
         <main>
           {isGameOver && (
             <GameOver
@@ -224,7 +224,7 @@ const MemoryGame = (props) => {
             </Fragment>
           )}
 
-          {playedPreviousGame && (
+          {playedPreviousGame && gameStarted && (
             <h1 className={classes["high-score"]}>
               HIGH SCORE: {highestScore}
             </h1>

@@ -48,7 +48,7 @@
   color: black;
 }
 
-/* Landscape mode for mobile devices */
+/* Mobile responsiveness for landscape mode */
 
 @media screen and (max-height: 541px) {
   .btn {
