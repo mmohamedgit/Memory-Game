@@ -208,7 +208,7 @@ const MemoryGame = (props) => {
                 {selectedPattern.map((item, index) => {
                   return (
                     <GameButton
-                      key={index}
+                      key={item}
                       id={index}
                       gameStarted={gameStarted}
                       gameOver={isGameOver}

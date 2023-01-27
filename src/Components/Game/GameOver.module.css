@@ -708,6 +708,39 @@ img.scott-nooo {
 /* Mobile responsiveness for landscape mode */
 
 @media screen and (max-height: 541px) {
+  img.x-mark {
+    width: 18rem;
+  }
+
+  img.elon-disappointed {
+    width: 18rem;
+  }
+  img.elon-mad {
+    width: 18rem;
+  }
+  img.elon-really {
+    width: 18rem;
+  }
+  img.elon-what {
+    width: 18rem;
+  }
+  img.protestor {
+    width: 18rem;
+  }
+
+  img.dwight-pissed {
+    width: 18rem;
+  }
+  img.scott-crying {
+    width: 18rem;
+  }
+  img.scott-mad {
+    width: 18rem;
+  }
+  img.scott-nooo {
+    width: 18rem;
+  }
+
   .score-title {
     font-size: 3.5rem;
     margin-top: 1rem;
@@ -871,6 +904,39 @@ img.scott-nooo {
 }
 
 @media screen and (max-height: 415px) {
+  img.x-mark {
+    width: 14rem;
+  }
+
+  img.elon-disappointed {
+    width: 20rem;
+  }
+  img.elon-mad {
+    width: 20rem;
+  }
+  img.elon-really {
+    width: 20rem;
+  }
+  img.elon-what {
+    width: 14rem;
+  }
+  img.protestor {
+    width: 16rem;
+  }
+
+  img.dwight-pissed {
+    width: 16rem;
+  }
+  img.scott-crying {
+    width: 14rem;
+  }
+  img.scott-mad {
+    width: 16rem;
+  }
+  img.scott-nooo {
+    width: 16rem;
+  }
+
   .score-title {
     font-size: 3rem;
     margin-bottom: 3.5rem;
@@ -1010,6 +1076,39 @@ img.scott-nooo {
 }
 
 @media screen and (max-height: 394px) {
+  img.x-mark {
+    width: 13rem;
+  }
+
+  img.elon-disappointed {
+    width: 19rem;
+  }
+  img.elon-mad {
+    width: 19rem;
+  }
+  img.elon-really {
+    width: 19rem;
+  }
+  img.elon-what {
+    width: 13rem;
+  }
+  img.protestor {
+    width: 15rem;
+  }
+
+  img.dwight-pissed {
+    width: 15rem;
+  }
+  img.scott-crying {
+    width: 13rem;
+  }
+  img.scott-mad {
+    width: 15rem;
+  }
+  img.scott-nooo {
+    width: 15rem;
+  }
+
   .score-title {
     font-size: 3rem;
     margin-bottom: 2.5rem;
@@ -1027,8 +1126,6 @@ img.scott-nooo {
 
   img.patrick {
     width: 14rem;
-    /* left: 3.25rem;
-    top: 4.5rem; */
   }
 
   img.novice {
@@ -1084,12 +1181,6 @@ img.scott-nooo {
     left: 4.25rem;
     top: 3rem;
   }
-  /* 
-  .message {
-    left: 9rem;
-    top: 0rem;
-    font-size: 1rem;
-  } */
 
   .message.novice {
     width: 35%;
@@ -1142,27 +1233,46 @@ img.scott-nooo {
     margin-bottom: 2rem;
     margin-top: 3rem;
   }
-
-  /* .btn button span {
-    font-size: 1.5rem;
-  } */
 }
 
 @media screen and (max-height: 376px) {
+  img.x-mark {
+    width: 12rem;
+  }
+
+  img.elon-disappointed {
+    width: 18rem;
+  }
+  img.elon-mad {
+    width: 18rem;
+  }
+  img.elon-really {
+    width: 18rem;
+  }
+  img.elon-what {
+    width: 12rem;
+  }
+  img.protestor {
+    width: 14rem;
+  }
+
+  img.dwight-pissed {
+    width: 14rem;
+  }
+  img.scott-crying {
+    width: 12rem;
+  }
+  img.scott-mad {
+    width: 14rem;
+  }
+  img.scott-nooo {
+    width: 14rem;
+  }
+
   .score-title {
     font-size: 2.75rem;
     margin-bottom: 1.75rem;
   }
-
-  /* .score {
-    font-size: 3rem;
-  } */
-
-  /* .genius-level {
-    font-size: 1.5rem;
-    left: 9rem;
-    bottom: 1rem;
-  } */
 
   img.patrick {
     width: 13rem;
@@ -1275,27 +1385,46 @@ img.scott-nooo {
     margin-bottom: 2.25rem;
     margin-top: 3rem;
   }
-
-  /* .btn button span {
-    font-size: 1.5rem;
-  } */
 }
 
 @media screen and (max-height: 361px) {
+  img.x-mark {
+    width: 10rem;
+  }
+
+  img.elon-disappointed {
+    width: 17rem;
+  }
+  img.elon-mad {
+    width: 17rem;
+  }
+  img.elon-really {
+    width: 17rem;
+  }
+  img.elon-what {
+    width: 11rem;
+  }
+  img.protestor {
+    width: 13rem;
+  }
+
+  img.dwight-pissed {
+    width: 13rem;
+  }
+  img.scott-crying {
+    width: 11rem;
+  }
+  img.scott-mad {
+    width: 13rem;
+  }
+  img.scott-nooo {
+    width: 13rem;
+  }
+
   .score-title {
     font-size: 2.75rem;
     margin-bottom: 1.75rem;
   }
-
-  /* .score {
-    font-size: 3rem;
-  } */
-
-  /* .genius-level {
-    font-size: 1.5rem;
-    left: 9rem;
-    bottom: 1rem;
-  } */
 
   img.patrick {
     top: 3.5rem;
@@ -1354,4 +1483,179 @@ img.scott-nooo {
 }
 
 @media screen and (max-height: 280px) {
+  .title {
+    font-size: 2.75rem;
+  }
+  img.x-mark {
+    width: 7.5rem;
+  }
+
+  img.elon-disappointed {
+    width: 14rem;
+  }
+  img.elon-mad {
+    width: 14rem;
+  }
+  img.elon-really {
+    width: 14rem;
+  }
+  img.elon-what {
+    width: 8rem;
+  }
+  img.protestor {
+    width: 10rem;
+  }
+
+  img.dwight-pissed {
+    width: 10rem;
+  }
+  img.scott-crying {
+    width: 8rem;
+  }
+  img.scott-mad {
+    width: 10rem;
+  }
+  img.scott-nooo {
+    width: 10rem;
+  }
+
+  .score-title {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .score {
+    font-size: 2rem;
+  }
+
+  .genius-level {
+    font-size: 1.25rem;
+    left: 7.5rem;
+    bottom: 1rem;
+  }
+
+  img.patrick {
+    width: 10.25rem;
+    left: 3rem;
+    top: 2.5rem;
+  }
+
+  img.novice {
+    width: 9rem;
+    left: 3rem;
+    bottom: 2.75rem;
+  }
+
+  img.unexpected {
+    width: 13rem;
+    left: 1.5rem;
+    bottom: 4rem;
+  }
+
+  img.underrated {
+    width: 8rem;
+    left: 4rem;
+    bottom: 2.75rem;
+  }
+
+  img.isaac {
+    width: 13rem;
+    left: 1.5rem;
+    top: 2.75rem;
+  }
+
+  img.garry {
+    width: 12.5rem;
+    left: 2rem;
+    top: 2rem;
+  }
+
+  img.nikola {
+    width: 6.75rem;
+    left: 3.75rem;
+    top: 1.75rem;
+  }
+
+  img.leonardo {
+    width: 13.5rem;
+    left: 1.25rem;
+    top: 2.5rem;
+  }
+
+  img.albert {
+    width: 8.5rem;
+    left: 3.25rem;
+    top: 2rem;
+  }
+
+  img.galaxy {
+    width: 8.75rem;
+    left: 3.5rem;
+    top: 1.75rem;
+  }
+
+  .message {
+    font-size: 0.9rem;
+    left: 7.5rem;
+  }
+
+  .message.novice {
+    width: 45%;
+  }
+
+  .message.unexpected {
+    width: 55%;
+    left: 7.5rem;
+    top: 0;
+  }
+
+  .message.underrated {
+    width: 55%;
+  }
+
+  .message.isaac {
+    width: 55%;
+    top: 0;
+    left: 7.5rem;
+  }
+
+  .message.garry {
+    top: 0;
+    width: 60%;
+    left: 7.5rem;
+  }
+
+  .message.nikola {
+    width: 45%;
+  }
+
+  .message.leonardo {
+    width: 55%;
+    top: 0;
+    left: 7.5rem;
+  }
+
+  .message.albert {
+    width: 60%;
+    top: 0;
+    left: 7.5rem;
+  }
+
+  .message.galaxy {
+    width: 65%;
+    font-size: 0.8rem;
+    top: 1.5rem;
+    left: 0;
+  }
+
+  .btn button {
+    width: 40%;
+    height: 2.5rem;
+    margin-top: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn button span {
+    font-size: 1.25rem;
+  }
 }

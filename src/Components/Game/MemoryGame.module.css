@@ -52,10 +52,26 @@ main {
   grid-template-rows: auto;
 }
 
+.gamebutton-layout.tiles-2 button {
+  width: 12rem;
+  height: 12rem;
+}
+
 .gamebutton-layout.tiles-4 {
   grid-template-columns: auto auto;
   grid-template-rows: auto;
 }
+
+.gamebutton-layout.tiles-4 button {
+  width: 11rem;
+  height: 11rem;
+}
+
+.gamebutton-layout.tiles-9 button {
+  width: 8.25rem;
+  height: 8.25rem;
+}
+
 .gamebutton-layout.tiles-9 {
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
@@ -168,7 +184,6 @@ main {
 @media screen and (max-height: 541px) {
   main {
     display: flex;
-    /* flex-wrap: wrap; */
   }
 
   .gamebutton-layout {
@@ -180,9 +195,19 @@ main {
     margin-right: 55px;
   }
 
+  .gamebutton-layout.tiles-2 button {
+    width: 9.25rem;
+    height: 9.25rem;
+  }
+
   .gamebutton-layout.tiles-4 {
     margin-bottom: 90px;
     margin-right: 55px;
+  }
+
+  .gamebutton-layout.tiles-4 button {
+    width: 9.25rem;
+    height: 9.25rem;
   }
 
   .gamebutton-layout.tiles-9 {
