@@ -198,36 +198,39 @@ const MemoryGame = (props) => {
                 theme={selectedTheme}
                 difficulty={selectedPattern.length}
               />
-              <GameLevel level={gamePattern} gameOver={isGameOver} />
-              <div
-                className={`${classes["gamebutton-layout"]} ${
-                  classes["tiles-" + selectedPattern.length]
-                }`}
-                tabIndex={0}
-              >
-                {selectedPattern.map((item, index) => {
-                  return (
-                    <GameButton
-                      key={item}
-                      id={index}
-                      gameStarted={gameStarted}
-                      gameOver={isGameOver}
-                      gamePattern={gamePattern}
-                      button={item}
-                      freezeButton={freezeButton}
-                      flashButton={flashButton}
-                      onButtonClick={buttonClickHandler}
-                    />
-                  );
-                })}
+
+              <div className={classes["gamebutton-section"]}>
+                <GameLevel level={gamePattern} gameOver={isGameOver} />
+                <div
+                  className={`${classes["gamebutton-layout"]} ${
+                    classes["tiles-" + selectedPattern.length]
+                  }`}
+                  tabIndex={0}
+                >
+                  {selectedPattern.map((item, index) => {
+                    return (
+                      <GameButton
+                        key={item}
+                        id={index}
+                        gameStarted={gameStarted}
+                        gameOver={isGameOver}
+                        gamePattern={gamePattern}
+                        button={item}
+                        freezeButton={freezeButton}
+                        flashButton={flashButton}
+                        onButtonClick={buttonClickHandler}
+                      />
+                    );
+                  })}
+                </div>
               </div>
             </Fragment>
           )}
 
           {playedPreviousGame && gameStarted && (
-            <h1 className={classes["high-score"]}>
-              HIGH SCORE: {highestScore}
-            </h1>
+            <div className={classes["high-score"]}>
+              <h1>HIGH SCORE: {highestScore}</h1>
+            </div>
           )}
         </main>
 

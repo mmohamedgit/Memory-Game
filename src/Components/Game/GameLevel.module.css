@@ -1,61 +1,16 @@
 .level {
-  font-size: 2rem;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .level h2 {
-  margin: 25px auto;
+  font-size: 2.5rem;
 }
 
 /* Mobile responsiveness for landscape mode */
 
-@media screen and (max-height: 545px) {
+@media only screen and (min-width: 480px) and (max-width: 1000px) and (orientation: landscape) {
   .level {
-    position: absolute;
-    left: 335px;
-    top: 20px;
-    width: 50%;
-  }
-}
-
-@media screen and (max-height: 450px) {
-  .level {
-    left: 350px;
-    top: 10px;
-  }
-}
-
-@media screen and (max-height: 415px) {
-  .level {
-    left: 425px;
-    top: -10px;
-  }
-}
-
-@media screen and (max-height: 394px) {
-  .level {
-    left: 400px;
-    top: -10px;
-  }
-}
-
-@media screen and (max-height: 376px) {
-  .level {
-    left: 315px;
-    top: -20px;
-  }
-}
-
-@media screen and (max-height: 361px) {
-  .level {
-    left: 350px;
-    top: -25px;
-  }
-}
-
-@media screen and (max-height: 280px) {
-  .level {
-    font-size: 25px;
-    left: 345px;
+    margin: auto;
   }
 }

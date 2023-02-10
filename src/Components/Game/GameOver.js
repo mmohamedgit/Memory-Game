@@ -80,8 +80,10 @@ const GameOver = (props) => {
   const GameOverMessage = () => {
     return (
       <div className={classes.first}>
-        <h2 className={classes.title}>GAME OVER!</h2>
-        <div className={classes.bounce}>
+        <div>
+          <h2 className={classes.title}>GAME OVER!</h2>
+        </div>
+        <div>
           <img
             className={classes[randomGameOverImage]}
             src={require(`../../assets/images/gameover/${randomGameOverImage}.${gameOverImgFormat}`)}
@@ -191,11 +193,14 @@ const GameOver = (props) => {
           <div className={classes["genius-level"]}>
             Genius Level: <span>{geniusLevel}</span>
           </div>
-          <img
-            className={classes[geniusStyle]}
-            src={require(`../../assets/images/geniuses/${geniusLevel}${imgFormat}`)}
-            alt="genius-img"
-          ></img>
+          <div className={classes["genius-style"]}>
+            <img
+              className={`${classes["genius-img"]} ${classes[geniusStyle]}`}
+              src={require(`../../assets/images/geniuses/${geniusLevel}${imgFormat}`)}
+              alt="genius-img"
+            ></img>
+          </div>
+
           <div className={`${classes.message} ${classes[geniusStyle]}`}>
             {geniusLevelMessage}
           </div>

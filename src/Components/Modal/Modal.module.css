@@ -18,7 +18,7 @@
   justify-content: center;
   width: clamp(35%, 32rem, 90%);
   height: clamp(40%, 34rem, 90%);
-  background-color: black;
+  /* background-color: rgba(255, 255, 255, 0.2); */
   padding: 0, 2rem;
   border-radius: 14px;
   border-style: solid;
@@ -39,8 +39,8 @@
   }
 }
 
-@media screen and (max-height: 280px) {
+/* @media screen and (max-height: 280px) {
   .modal {
     width: 27rem;
   }
-}
+} */

@@ -149,46 +149,54 @@ const GameOptions = (props) => {
           <div className={classes.menu}>
             {!gameOver && (
               <div className={classes.title}>
-                <h1>Memory Game</h1>
                 <img
                   src={require(`../../assets/images/logo.svg`).default}
                   alt="logo"
                 ></img>
+                <h1>Memory Game</h1>
               </div>
             )}
-            <h2>Choose your Settings</h2>
             <div className={classes["select-options"]}>
-              <label htmlFor="theme">Pattern Theme:</label>
-              <select
-                name="pattern-theme"
-                value={patternTheme}
-                id={patternTheme}
-                onChange={patternThemeHandler}
-              >
-                <option value="colours">Colours</option>
-                <option value="elon-musk">Elon Musk</option>
-                <option value="the-office">The Office</option>
-              </select>
+              <div>
+                <h2>Choose your Settings</h2>
+                <div className={classes["select-theme"]}>
+                  <label htmlFor="theme">Pattern Theme:</label>
+                  <select
+                    name="pattern-theme"
+                    value={patternTheme}
+                    id={patternTheme}
+                    onChange={patternThemeHandler}
+                  >
+                    <option value="colours">Colours</option>
+                    <option value="elon-musk">Elon Musk</option>
+                    <option value="the-office">The Office</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="difficulty">Pattern Difficulty:</label>
+                  <select
+                    name="difficulty"
+                    value={difficulty}
+                    id={difficulty}
+                    onChange={setDifficultyHandler}
+                  >
+                    <option value="2">Easy</option>
+                    <option value="4">Medium</option>
+                    <option value="9">Hard</option>
+                  </select>
+                </div>
+              </div>
               <div className={classes.preview}>
                 <img
                   className={classes[patternTheme]}
                   src={require(`../../assets/images/${patternTheme}/preview.gif`)}
                   alt="pattern"
                 ></img>
+                <div className={classes.start}>
+                  <PlayButton buttonLabel={buttonLabel} />
+                </div>
               </div>
-              <label htmlFor="difficulty">Pattern Difficulty:</label>
-              <select
-                name="difficulty"
-                value={difficulty}
-                id={difficulty}
-                onChange={setDifficultyHandler}
-              >
-                <option value="2">Easy</option>
-                <option value="4">Medium</option>
-                <option value="9">Hard</option>
-              </select>
             </div>
-            <PlayButton buttonLabel={buttonLabel} />
           </div>
         </form>
       </Modal>

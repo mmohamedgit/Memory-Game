@@ -4,31 +4,33 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  color: lightcyan;
 }
 
-.menu h2 {
-  margin: 0px auto;
-  font-size: 30px;
+.preview {
+  margin-top: 1rem;
+}
+
+.select-theme {
+  margin-bottom: 1rem;
 }
 
 .preview img {
   text-align: center;
-  margin: 10px auto;
   border: 1px;
   border-radius: 10px;
-  border-style: solid black;
 }
 
 img.colours {
-  width: 225px;
+  width: 10rem;
 }
 
 img.elon-musk {
-  width: 225px;
+  width: 12rem;
 }
 
 img.the-office {
-  width: 250px;
+  width: 11rem;
 }
 
 .select-options label {
@@ -38,9 +40,8 @@ img.the-office {
 
 .select-options select {
   background-color: transparent;
-  color: #fff;
+  color: gold;
   font-size: 20px;
-  font-weight: 900;
   text-align: center;
   border: none;
   font-family: "Lalezar-Regular";
@@ -53,247 +54,92 @@ img.the-office {
 
 .title {
   display: flex;
-  align-items: center;
-  padding: 0px;
-  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .title h1 {
-  margin: 0px auto;
-  font-size: 35px;
-  padding: 0px;
+  font-size: 2rem;
 }
 
 .title img {
   position: relative;
-  width: 50px;
-  padding: 5px;
-  bottom: 5px;
-}
-
-/* Mobile responsiveness for portrait mode - Samsung Galaxy Fold*/
-
-@media screen and (max-width: 281px) {
-  img.colours {
-    width: 150px;
-  }
-
-  img.elon-musk {
-    width: 150px;
-  }
-
-  img.the-office {
-    width: 155px;
-  }
-
-  .title {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .title h1 {
-    font-size: 35px;
-  }
-
-  .title img {
-    width: 60px;
-  }
-
-  .menu h2 {
-    font-size: 22px;
-  }
-
-  .select-options label {
-    font-size: 17px;
-  }
-
-  .select-options select {
-    font-size: 17px;
-  }
+  width: 3rem;
+  padding: 0.25rem;
+  bottom: 0.25rem;
 }
 
 /* Mobile responsiveness for landscape mode */
 
-@media screen and (max-height: 541px) {
+@media only screen and (min-width: 480px) and (max-width: 1000px) and (orientation: landscape) {
+  .menu {
+    position: relative;
+    margin: auto 1rem;
+  }
+
+  .title {
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+
+  .menu .title h1 {
+    /*clamp font*/
+  }
+
+  .menu .title img {
+    width: 3rem;
+    margin-right: 0.5rem;
+  }
+
+  .menu label {
+    font-size: 1rem;
+  }
+
+  .select-options {
+    display: flex;
+    margin: 0.5rem auto;
+  }
+
+  .menu .select-options label {
+    font-size: 1.25rem;
+  }
+
+  .menu .select-options select {
+    font-size: 1.25rem;
+    display: block;
+    margin: auto;
+  }
+
+  .menu .select-options h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .preview {
+    order: 3;
+    margin-left: 4rem;
+    margin-top: 0;
+  }
+
   img.colours {
-    width: 180px;
+    width: 10rem;
   }
 
   img.elon-musk {
-    width: 180px;
+    width: 11rem;
   }
 
   img.the-office {
-    width: 190px;
+    width: 10rem;
   }
 
-  .title h1 {
-    font-size: 30px;
+  .start {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  .title img {
-    width: 35px;
-  }
-
-  .menu h2 {
-    font-size: 25px;
-  }
-
-  .select-options label {
-    font-size: 20px;
-  }
-
-  .select-options select {
-    font-size: 20px;
-  }
-}
-
-@media screen and (max-height: 415px) {
-  img.colours {
-    width: 130px;
-  }
-
-  img.elon-musk {
-    width: 130px;
-  }
-
-  img.the-office {
-    width: 140px;
-  }
-
-  .title h1 {
-    font-size: 27px;
-  }
-
-  .title img {
-    width: 32px;
-  }
-
-  .menu h2 {
-    font-size: 22px;
-  }
-
-  .select-options label {
-    font-size: 17px;
-  }
-
-  .select-options select {
-    font-size: 17px;
-  }
-}
-
-@media screen and (max-height: 394px) {
-  img.colours {
-    width: 125px;
-  }
-
-  img.elon-musk {
-    width: 125px;
-  }
-
-  img.the-office {
-    width: 135px;
-  }
-}
-
-@media screen and (max-height: 376px) {
-  img.colours {
-    width: 130px;
-  }
-
-  img.elon-musk {
-    width: 130px;
-  }
-
-  img.the-office {
-    width: 135px;
-  }
-
-  .title h1 {
-    font-size: 25px;
-  }
-
-  .title img {
-    width: 30px;
-  }
-
-  .menu h2 {
-    font-size: 20px;
-  }
-
-  .select-options label {
-    font-size: 15px;
-  }
-
-  .select-options select {
-    font-size: 15px;
-  }
-}
-
-@media screen and (max-height: 361px) {
-  img.colours {
-    width: 125px;
-  }
-
-  img.elon-musk {
-    width: 125px;
-  }
-
-  img.the-office {
-    width: 130px;
-  }
-
-  .title h1 {
-    font-size: 22px;
-  }
-
-  .title img {
-    width: 27px;
-  }
-
-  .menu h2 {
-    font-size: 17px;
-  }
-
-  .select-options label {
-    font-size: 13px;
-  }
-
-  .select-options select {
-    font-size: 13px;
-  }
-}
-
-@media screen and (max-height: 280px) {
-  img.colours {
-    width: 65px;
-  }
-
-  img.elon-musk {
-    width: 80px;
-  }
-
-  img.the-office {
-    width: 70px;
-  }
-
-  .title h1 {
-    font-size: 20px;
-  }
-
-  .title img {
-    width: 25px;
-  }
-
-  .menu h2 {
-    font-size: 15px;
-  }
-
-  .select-options label {
-    font-size: 15px;
-  }
-
-  .select-options select {
-    font-size: 15px;
+  .start button {
+    margin-top: 0;
+    width: 9rem;
+    height: 3rem;
   }
 }

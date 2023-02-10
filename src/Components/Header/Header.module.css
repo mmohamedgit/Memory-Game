@@ -1,23 +1,34 @@
 .game-header {
-  font-size: 25px;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .game-header p {
-  text-align: center;
   margin: 10px;
+}
+
+.game-header span {
+  display: inline-block;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1000px) and (orientation: landscape) {
+  .game-header {
+    position: absolute;
+    margin-top: 3rem;
+  }
 }
 
 /* Mobile responsiveness for portrait mode - Samsung Galaxy Fold*/
 
-@media screen and (max-width: 281px) {
+/* @media screen and (max-width: 281px) {
   .game-header {
     font-size: 20px;
   }
-}
+} */
 
 /* Mobile responsiveness for landscape mode */
 
-@media screen and (max-height: 541px) {
+/* @media screen and (max-height: 541px) {
   .game-header {
     margin: 175px auto;
   }
@@ -57,4 +68,4 @@
   .game-header {
     margin: 75px auto;
   }
-}
+} */

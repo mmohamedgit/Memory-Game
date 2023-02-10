@@ -50,7 +50,7 @@
 
 /* Mobile responsiveness for landscape mode */
 
-@media screen and (max-height: 541px) {
+/* @media screen and (max-height: 541px) {
   .btn {
     width: 11.25rem;
     height: 3.75rem;
@@ -92,4 +92,4 @@
     height: 2.5rem;
     margin-top: 2px;
   }
-}
+} */
