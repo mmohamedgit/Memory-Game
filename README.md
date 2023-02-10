@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Memory Game
+
+A mobile-friendly memory sequence game built with React, CSS, and HTML. Challenge yourself to memorize a sequence of images featuring colours, fun images of Elon Musk and characters from the popular TV show The Office. Improve your cognitive skills and test your memory with this engaging and entertaining game, optimized for seamless gameplay on all devices.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
