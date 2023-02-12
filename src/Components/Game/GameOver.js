@@ -103,7 +103,15 @@ const GameOver = (props) => {
 
   switch (score) {
     case 0:
-      geniusLevel = "Patrick Star";
+      geniusLevel = (
+        <a
+          href="https://spongebob.fandom.com/wiki/Patrick_Star#Intelligence"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Patrick Star
+        </a>
+      );
       geniusLevelMessage = "Are you even trying???";
       geniusStyle = "patrick";
       imgFormat = ".jpg";
@@ -111,7 +119,15 @@ const GameOver = (props) => {
 
     case 1:
     case 2:
-      geniusLevel = "Novice";
+      geniusLevel = (
+        <a
+          href="https://knowyourmeme.com/memes/roll-safe"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Novice
+        </a>
+      );
       geniusLevelMessage = "You now know how to play this game!";
       geniusStyle = "novice";
       imgFormat = ".webp";
@@ -127,15 +143,31 @@ const GameOver = (props) => {
 
     case 5:
     case 6:
-      geniusLevel = "Underrated Genius";
+      geniusLevel = (
+        <a
+          href="https://en.wikipedia.org/wiki/Christopher_Langan"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Christopher Langan
+        </a>
+      );
       geniusLevelMessage = "Low-key smart just like Christopher Langan.";
-      geniusStyle = "underrated";
+      geniusStyle = "christopher";
       imgFormat = ".jpg";
       break;
 
     case 7:
     case 8:
-      geniusLevel = "Isaac Newton";
+      geniusLevel = (
+        <a
+          href="https://www.biography.com/scientists/isaac-newton"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Isaac Newton
+        </a>
+      );
       geniusLevelMessage =
         "The genius apple doesn't fall far from the genius tree.";
       geniusStyle = "isaac";
@@ -144,7 +176,15 @@ const GameOver = (props) => {
 
     case 9:
     case 10:
-      geniusLevel = "Garry Kasparov";
+      geniusLevel = (
+        <a
+          href="https://www.chess.com/players/garry-kasparov"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Garry Kasparov
+        </a>
+      );
       geniusLevelMessage = "You predicted this win. Here's my queen, take it.";
       geniusStyle = "garry";
       imgFormat = ".jpg";
@@ -152,7 +192,15 @@ const GameOver = (props) => {
 
     case 11:
     case 12:
-      geniusLevel = "Nikola Tesla";
+      geniusLevel = (
+        <a
+          href="https://www.biography.com/inventors/nikola-tesla"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Nikola Tesla
+        </a>
+      );
       geniusLevelMessage = "Here's a shocker: You are electrifying!";
       geniusStyle = "nikola";
       imgFormat = ".jpg";
@@ -160,7 +208,15 @@ const GameOver = (props) => {
 
     case 13:
     case 14:
-      geniusLevel = "Leonardo da Vinci";
+      geniusLevel = (
+        <a
+          href="https://www.biography.com/artists/leonardo-da-vinci"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Leonardo da Vinci
+        </a>
+      );
       geniusLevelMessage = "Fight with Michelangelo? It will end as a...draw.";
       geniusStyle = "leonardo";
       imgFormat = ".webp";
@@ -168,14 +224,30 @@ const GameOver = (props) => {
 
     case 15:
     case 16:
-      geniusLevel = "Albert Einstein";
+      geniusLevel = (
+        <a
+          href="https://www.biography.com/scientists/albert-einstein"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Albert Einstein
+        </a>
+      );
       geniusLevelMessage = "Want to marry your cousin? It's all relative baby.";
       geniusStyle = "albert";
       imgFormat = ".jpg";
       break;
 
     default:
-      geniusLevel = "Galaxy Brain";
+      geniusLevel = (
+        <a
+          href="https://knowyourmeme.com/memes/galaxy-brain"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Galaxy Brain
+        </a>
+      );
       geniusLevelMessage =
         "Congrats, we officially declare your genius at galaxy-brain level. Highest level reached!";
       geniusStyle = "galaxy";
@@ -196,7 +268,7 @@ const GameOver = (props) => {
           <div className={classes["genius-style"]}>
             <img
               className={`${classes["genius-img"]} ${classes[geniusStyle]}`}
-              src={require(`../../assets/images/geniuses/${geniusLevel}${imgFormat}`)}
+              src={require(`../../assets/images/geniuses/${geniusStyle}${imgFormat}`)}
               alt="genius-img"
             ></img>
           </div>
@@ -220,7 +292,7 @@ const GameOver = (props) => {
   return (
     <Fragment>
       {!showGameOptions && (
-        <Modal>
+        <Modal gameOver={gameOver}>
           <div className={classes.gameover}>
             {!showPlayAgain && <GameOverMessage />}
             {showPlayAgain && <PlayAgain />}

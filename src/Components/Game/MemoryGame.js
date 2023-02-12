@@ -10,7 +10,7 @@ import GameOptions from "./GameOptions";
 import classes from "./MemoryGame.module.css";
 
 import GameOverSound from "../../assets/sounds/gameover.mp3";
-import ButtonClickSound from "../../assets/sounds/game-button-click.wav";
+import ButtonClickSound from "../../assets/sounds/game-button-click.mp3";
 import SequenceSound from "../../assets/sounds/sequence.mp3";
 import StartSound from "../../assets/sounds/start.mp3";
 
@@ -112,7 +112,6 @@ const MemoryGame = (props) => {
       setFreezeButton(true);
 
       //This sets the flash CSS class for each button based in the gamePattern array
-
       if (currentIndex < gamePattern.length) {
         const currentColor = gamePattern[currentIndex];
         setFlashButton(currentColor);

@@ -21,23 +21,32 @@ body {
   background-size: cover;
   background-position: bottom;
   position: relative;
+}
+
+/* .app.gameover {
+  background-color: #ff0000;
+} */
+
+main {
+  min-height: 100vh;
   animation: fadeIn 3s;
+  animation: pan-zoom 3s;
   -webkit-animation: fadeIn 3s;
   -moz-animation: fadeIn 3s;
   -o-animation: fadeIn 3s;
   -ms-animation: fadeIn 3s;
 }
 
-.app.gameover {
-  /* background-color: #ff0000; */
-}
-
-main {
-  min-height: 100vh;
-}
-
 .app span {
   margin-left: 10px;
+}
+
+.gamebutton-section {
+  animation: fadeIn 3s;
+  -webkit-animation: fadeIn 3s;
+  -moz-animation: fadeIn 3s;
+  -o-animation: fadeIn 3s;
+  -ms-animation: fadeIn 3s;
 }
 
 .gamebutton-layout {
@@ -86,6 +95,7 @@ main {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }

@@ -15,10 +15,14 @@
 .second {
   flex-direction: column;
   display: flex;
+  animation: fadeIn 3s;
+  -webkit-animation: fadeIn 3s;
+  -moz-animation: fadeIn 3s;
+  -o-animation: fadeIn 3s;
+  -ms-animation: fadeIn 3s;
 }
 
 .first img {
-  animation: spin 1s;
   border-radius: 2%;
 }
 
@@ -53,8 +57,9 @@
   font-size: 1.75rem;
 }
 
-.genius-level span {
+.genius-level a {
   color: lightskyblue;
+  text-decoration: none;
 }
 
 img.patrick {
@@ -69,7 +74,7 @@ img.unexpected {
   width: 25rem;
 }
 
-img.underrated {
+img.christopher {
   width: 12rem;
 }
 
@@ -107,7 +112,7 @@ img.galaxy {
   width: 60%;
 }
 
-.message.underrated {
+.message.christopher {
   width: 60%;
 }
 
@@ -142,14 +147,55 @@ img.galaxy {
   margin: 0.5rem auto 1rem 1rem;
 }
 
-/* Colour Theme */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
 
-.first img {
-  animation: bounce 2.5s linear;
+  100% {
+    opacity: 1;
+  }
 }
 
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Colour Theme */
+
 .title {
-  animation: bounce 2.5s linear;
   animation: spin 2.5s linear;
 }
 
@@ -194,32 +240,6 @@ img.scott-mad {
 
 img.scott-nooo {
   width: 20rem;
-}
-
-@keyframes bounce {
-  0% {
-    opacity: 0;
-    transform: scale(3);
-  }
-
-  25% {
-    opacity: 1;
-    transform: scale(2.875);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(2.25);
-  }
-
-  75% {
-    opacity: 1;
-    transform: scale(1.625);
-  }
-
-  100% {
-    transform: scale(1);
-  }
 }
 
 @keyframes spin {
@@ -299,7 +319,7 @@ img.scott-nooo {
     width: 20rem;
   }
 
-  img.underrated {
+  img.christopher {
     width: 12rem;
   }
 
@@ -331,7 +351,7 @@ img.scott-nooo {
     font-size: 1.25rem;
   }
 
-  .message.underrated {
+  .message.christopher {
     width: 60%;
   }
   .message.unexpected {
@@ -406,7 +426,7 @@ img.scott-nooo {
     font-size: 1.25rem;
   }
 
-  img.unexpected {
+  img.christopher {
     width: 19rem;
   }
 
@@ -542,7 +562,7 @@ img.scott-nooo {
     width: 65%;
   }
 
-  .message.underrated {
+  .message.christopher {
     width: 70%;
   }
   .message.isaac {
@@ -642,7 +662,7 @@ img.scott-nooo {
     width: 13rem;
   }
 
-  img.underrated {
+  img.christopher {
     width: 8.5rem;
   }
 
@@ -678,7 +698,7 @@ img.scott-nooo {
     width: 65%;
   }
 
-  .message.underrated {
+  .message.christopher {
     width: 80%;
   }
 
@@ -801,7 +821,7 @@ img.scott-nooo {
     width: 16rem;
   }
 
-  .genius-img.underrated {
+  .genius-img.christopher {
     width: 8.5rem;
   }
 
@@ -851,7 +871,7 @@ img.scott-nooo {
     width: 60%;
   }
 
-  .message.underrated {
+  .message.christopher {
     margin-bottom: 2rem;
     width: 70%;
   }

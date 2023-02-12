@@ -5,8 +5,14 @@ import classes from "./Modal.module.css";
 // resusable Modals with a Backdrop for GameOptions & GameOver components
 
 const ModalOverlay = (props) => {
+  const { gameOver } = props;
+
+  const modalClasses = `${classes.modal} ${
+    gameOver ? classes["pan-zoom"] : classes["slide-down"]
+  }`;
+
   return (
-    <div className={classes.modal}>
+    <div className={modalClasses}>
       <div>{props.children}</div>
     </div>
   );
@@ -25,11 +31,12 @@ const ModalBackdrop = (props) => {
 const portalElement = document.getElementById("overlay");
 
 const Modal = (props) => {
+  const { gameOver } = props;
   return (
     <Fragment>
       {ReactDOM.createPortal(
         <ModalBackdrop>
-          <ModalOverlay>{props.children}</ModalOverlay>
+          <ModalOverlay gameOver={gameOver}>{props.children}</ModalOverlay>
         </ModalBackdrop>,
         portalElement
       )}
