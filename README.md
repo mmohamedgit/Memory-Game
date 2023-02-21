@@ -1,4 +1,4 @@
-https://github-readme-tech-stack.vercel.app/api/cards?title=Memory%20Game&lineCount=1&theme=cyberpunk&line1=React,React,b1080b;CSS3,CSS3,1d527d;JavaScript,JS,9c0713;Node.js,Node.js,80317f;HTML5,HTML5,1ec695;
+<img src="https://github-readme-tech-stack.vercel.app/api/cards?title=Memory%20Game&lineCount=1&theme=cyberpunk&line1=React,React,b1080b;CSS3,CSS3,1d527d;JavaScript,JS,9c0713;Node.js,Node.js,80317f;HTML5,HTML5,1ec695;" alt="My Tech Stack" />
 
 A mobile-friendly memory sequence game built with React, CSS, and HTML. Challenge yourself to memorize a sequence of images featuring colours, fun images of Elon Musk and characters from the popular TV show The Office. Improve your cognitive skills and test your memory with this engaging and entertaining game, optimized for seamless gameplay on all devices.
 
