@@ -3,14 +3,14 @@ import { useState, useEffect, Fragment } from "react";
 import Header from "../Header/Header.js";
 import Footer from "../Footer/Footer";
 
-import GameButton from "./GameButton";
+import GameTiles from "./GameTiles.js";
 import GameLevel from "./GameLevel";
 import GameOver from "./GameOver";
-import GameOptions from "./GameOptions";
+import Settings from "./Settings.js";
 import classes from "./MemoryGame.module.css";
 
 import GameOverSound from "../../assets/sounds/gameover.mp3";
-import ButtonClickSound from "../../assets/sounds/game-button-click.mp3";
+import TileClickSound from "../../assets/sounds/game-button-click.mp3";
 import SequenceSound from "../../assets/sounds/sequence.mp3";
 import StartSound from "../../assets/sounds/start.mp3";
 
@@ -25,15 +25,15 @@ const MemoryGame = (props) => {
   const [currentScore, setCurrentScore] = useState(0);
   const [highestScore, setHighestScore] = useState(0);
   const [playingIndex, setPlayingIndex] = useState(0);
-  const [flashButton, setFlashButton] = useState(null);
-  const [freezeButton, setFreezeButton] = useState(true);
+  const [flashTile, setFlashTile] = useState(null);
+  const [freezeTiles, setFreezeTiles] = useState(true);
 
   if (!playedPreviousGame && isGameOver && highestScore > 0) {
     setPlayedPreviousGame(true);
   }
 
   const addNextSequence = (pattern) => {
-    setFreezeButton(true);
+    setFreezeTiles(true);
 
     let chosenPattern;
 
@@ -53,7 +53,7 @@ const MemoryGame = (props) => {
 
     setgamePattern(newPattern);
 
-    console.log(newPattern);
+    //console.log(newPattern);
   };
 
   const playSound = (name) => {
@@ -74,7 +74,7 @@ const MemoryGame = (props) => {
 
   const startGame = (pattern, gameOverPhotos, theme) => {
     setIsGameOver(false);
-    setFreezeButton(true);
+    setFreezeTiles(true);
 
     console.log(pattern);
 
@@ -92,7 +92,7 @@ const MemoryGame = (props) => {
     if (!gameStarted) {
       setgameStarted(true);
       playSound(StartSound);
-      setFreezeButton(true);
+      setFreezeTiles(true);
       const addNextSequenceTimer = setTimeout(() => {
         addNextSequence(pattern, gameOverPhotos);
       }, 3000);
@@ -109,16 +109,16 @@ const MemoryGame = (props) => {
 
     const showGamePattern = () => {
       // To prevent the User from clicking the game buttons during the sequence duration
-      setFreezeButton(true);
+      setFreezeTiles(true);
 
       //This sets the flash CSS class for each button based in the gamePattern array
       if (currentIndex < gamePattern.length) {
         const currentColor = gamePattern[currentIndex];
-        setFlashButton(currentColor);
+        setFlashTile(currentColor);
         playSound(SequenceSound);
         // Reset the flash class after a short delay of 300ms
         const resetFlashTimer = setTimeout(() => {
-          setFlashButton(null);
+          setFlashTile(null);
         }, 300);
 
         currentIndex++;
@@ -127,7 +127,7 @@ const MemoryGame = (props) => {
           clearTimeout(resetFlashTimer);
         };
       } else {
-        setFreezeButton(false);
+        setFreezeTiles(false);
         clearInterval(interval);
       }
     };
@@ -147,11 +147,13 @@ const MemoryGame = (props) => {
     }
   }, [highestScore, gamePattern.length]);
 
-  const buttonClickHandler = (clickedItem) => {
+  const tileClickHandler = (clickedTile) => {
     if (gameStarted) {
-      // If the User clicked the matching colour of the game pattern
-      playSound(ButtonClickSound);
-      if (gamePattern[playingIndex] === clickedItem) {
+      // To play the click sound when the player clicks on a tile
+      playSound(TileClickSound);
+
+      // If the player clicked the matching tile of the game pattern
+      if (gamePattern[playingIndex] === clickedTile) {
         // If the User clicked the last item of the pattern, game goes to the next level and next sequence is added
         if (playingIndex === gamePattern.length - 1) {
           const nextSequenceTimer = setTimeout(() => {
@@ -162,12 +164,12 @@ const MemoryGame = (props) => {
           return () => {
             clearTimeout(nextSequenceTimer);
           };
-          // If the User is missing some items of the game pattern to be clicked
+          // If the player is missing some items of the game pattern to be clicked
         } else {
           setPlayingIndex(playingIndex + 1);
         }
       } else {
-        // If the User clicked on the wrong pattern, gamePattern resets to an empty array
+        // If the player clicked on the wrong pattern, gamePattern resets to an empty array and the current score is saved
         setCurrentScore(() => gamePattern.length - 1);
         playSound(GameOverSound);
         resetPattern();
@@ -189,7 +191,7 @@ const MemoryGame = (props) => {
               gameOverImages={gameOverImages}
             />
           )}
-          <GameOptions onSelectedPattern={startGame} />
+          <Settings onSelectedPattern={startGame} />
 
           {!isGameOver && gameStarted && (
             <Fragment>
@@ -206,18 +208,18 @@ const MemoryGame = (props) => {
                   }`}
                   tabIndex={0}
                 >
-                  {selectedPattern.map((item, index) => {
+                  {selectedPattern.map((tile, index) => {
                     return (
-                      <GameButton
-                        key={item}
+                      <GameTiles
+                        key={tile}
                         id={index}
                         gameStarted={gameStarted}
                         gameOver={isGameOver}
                         gamePattern={gamePattern}
-                        button={item}
-                        freezeButton={freezeButton}
-                        flashButton={flashButton}
-                        onButtonClick={buttonClickHandler}
+                        tile={tile}
+                        freezeTiles={freezeTiles}
+                        flashTile={flashTile}
+                        onTileClick={tileClickHandler}
                       />
                     );
                   })}

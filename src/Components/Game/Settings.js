@@ -1,16 +1,24 @@
-import { useState } from "react";
+// import { useState } from "react";
+
 import Modal from "../Modal/Modal";
 import PlayButton from "./PlayButton";
 import classes from "./GameOptions.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { settingsActions } from "../../store/settings-slice";
 
-const GameOptions = (props) => {
+const Settings = (props) => {
+  const dispatch = useDispatch();
+  const patternTheme = useSelector((state) => state.settings.patternTheme);
+  const difficulty = useSelector((state) => state.settings.difficulty);
+  const hideSettings = useSelector((state) => state.settings.hideSettings);
+  console.log(patternTheme, difficulty, hideSettings);
+
   const { gameOver } = props;
 
-  const [patternTheme, setPatternTheme] = useState("colours");
-  const [difficulty, setDifficulty] = useState(4);
-  const [hideSelection, setHideSelection] = useState(false);
-
-  // const numbers =[]
+  // const [patternTheme, setPatternTheme] = useState("colours");
+  //set difficulty default to 4 tiles
+  // const [difficulty, setDifficulty] = useState(4);
+  // const [hideGameOptionModal, setHideGameOptionModal] = useState(false);
 
   let buttonLabel;
 
@@ -93,11 +101,11 @@ const GameOptions = (props) => {
   };
 
   const patternThemeHandler = (event) => {
-    setPatternTheme(event.target.value);
+    dispatch(settingsActions.patternTheme(event.target.value));
   };
 
   const setDifficultyHandler = (event) => {
-    setDifficulty(event.target.value);
+    dispatch(settingsActions.difficulty(event.target.value));
   };
 
   const selectedPatternHandler = (event) => {
@@ -137,13 +145,12 @@ const GameOptions = (props) => {
 
     props.onSelectedPattern(selectedPattern, gameOverImages, theme);
 
-    console.log(selectedPattern);
-
-    setHideSelection(true);
+    //console.log(selectedPattern);
+    dispatch(settingsActions.hideSettings());
   };
 
   return (
-    !hideSelection && (
+    !hideSettings && (
       <Modal>
         <form onSubmit={selectedPatternHandler}>
           <div className={classes.menu}>
@@ -203,4 +210,4 @@ const GameOptions = (props) => {
     )
   );
 };
-export default GameOptions;
+export default Settings;

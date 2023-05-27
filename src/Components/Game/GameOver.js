@@ -1,5 +1,5 @@
 import { useState, useEffect, Fragment } from "react";
-import GameOptions from "./GameOptions";
+import GameOptions from "./Settings";
 import Modal from "../Modal/Modal";
 import PlayButton from "./PlayButton";
 import classes from "./GameOver.module.css";

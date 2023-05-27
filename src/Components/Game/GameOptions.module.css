@@ -68,21 +68,6 @@ img.the-office {
   bottom: 0.25rem;
 }
 
-.slide-down {
-  animation: slide-down 300ms ease-out forwards;
-}
-
-@keyframes slide-down {
-  from {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
 /* Mobile responsiveness for landscape mode */
 
 @media only screen and (min-width: 480px) and (max-width: 1000px) and (orientation: landscape) {
