@@ -189,7 +189,7 @@
   background-image: url("../../assets/images/the-office/stanley-himself.gif");
 }
 
-/* Game Button Effects */
+/* Tile Button Effects */
 
 .pressed {
   box-shadow: 0 0 20px white;
@@ -200,7 +200,7 @@ button:hover {
   transform: scale(1.07);
 }
 
-.sequence-fade {
+.flash-tile {
   opacity: 1;
   animation: fade 0.3s linear;
 }

@@ -1,9 +1,14 @@
+import { useSelector } from "react-redux";
 import classes from "./PlayButton.module.css";
 
 const PlayButton = (props) => {
-  const { gameOver, onClick, buttonLabel } = props;
+  const { onClick, buttonLabel } = props;
 
-  const btnClasses = `${classes.btn} ${gameOver ? classes["play-again"] : ""}`;
+  const isGameOver = useSelector((state) => state.game.isGameOver);
+
+  const btnClasses = `${classes.btn} ${
+    isGameOver ? classes["play-again"] : ""
+  }`;
 
   return (
     <button className={btnClasses} onClick={onClick}>

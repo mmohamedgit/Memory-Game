@@ -1,9 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const settingsInitialState = {
-  patternTheme: "colours",
-  // easy: 2 tiles; medium: 4 tiles; hard: 9 tiles
-  difficulty: 4,
+  theme: "colours",
+  difficulty: 2,
   hideSettings: false,
 };
 
@@ -11,20 +10,19 @@ const settingsSlice = createSlice({
   name: "settings",
   initialState: settingsInitialState,
   reducers: {
-    patternTheme(state, action) {
-      state.patternTheme = action.payload;
+    selectThemeToggler(state, action) {
+      state.theme = action.payload;
     },
 
-    difficulty(state, action) {
+    selectDifficultyToggler(state, action) {
       state.difficulty = action.payload;
     },
 
-    hideSettings(state) {
-      state.hideSettings = true;
+    hideSettings(state, action) {
+      state.hideSettings = action.payload;
     },
   },
 });
 
 export const settingsActions = settingsSlice.actions;
-
-export default settingsSlice;
+export default settingsSlice.reducer;

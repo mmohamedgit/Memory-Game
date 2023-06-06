@@ -1,21 +1,22 @@
 import { useState, useEffect, Fragment } from "react";
-import GameOptions from "./Settings";
+import { useDispatch, useSelector } from "react-redux";
+
+import { settingsActions } from "../../store/settings-slice";
+
 import Modal from "../Modal/Modal";
 import PlayButton from "./PlayButton";
 import classes from "./GameOver.module.css";
+import Settings from "./Settings";
+import { gameActions } from "../../store/game-slice";
 
-const GameOver = (props) => {
+const GameOver = () => {
   const [showPlayAgain, setShowPlayAgain] = useState(false);
-  const [showGameOptions, setShowGameOptions] = useState(false);
 
-  const {
-    gameOverImages,
-    score,
-    highScore,
-    gameOver,
-    onStartGame,
-    onRestartGame,
-  } = props;
+  const dispatch = useDispatch();
+
+  const gameOverImages = useSelector((state) => state.game.gameOverImages);
+  const score = useSelector((state) => state.game.currentScore);
+  const highestScore = useSelector((state) => state.game.highestScore);
 
   let gameOverImgFormat;
 
@@ -62,9 +63,13 @@ const GameOver = (props) => {
       break;
   }
 
-  console.log(randomGameOverImage, gameOverImgFormat);
   const changeSettingsHandler = () => {
-    setShowGameOptions(true);
+    dispatch(settingsActions.hideSettings(false));
+    dispatch(gameActions.resetPattern());
+  };
+
+  const restartGameHandler = () => {
+    dispatch(gameActions.resetPattern());
   };
 
   useEffect(() => {
@@ -98,8 +103,6 @@ const GameOver = (props) => {
   let geniusLevel;
   let geniusLevelMessage;
   let imgFormat;
-
-  console.log(score);
 
   switch (score) {
     case 0:
@@ -259,7 +262,8 @@ const GameOver = (props) => {
     return (
       <div className={classes.second}>
         <div className={classes["score-title"]}>
-          Highest Score: <span className={classes.score}>{highScore} PTS</span>
+          Highest Score:
+          <span className={classes.score}> {highestScore} PTS</span>
         </div>
         <div className={classes.genius}>
           <div className={classes["genius-level"]}>
@@ -278,12 +282,8 @@ const GameOver = (props) => {
           </div>
         </div>
         <div className={classes.btn}>
-          <PlayButton
-            gameOver={gameOver}
-            onClick={onRestartGame}
-            buttonLabel="Restart"
-          />
-          <PlayButton buttonLabel="Settings" onClick={changeSettingsHandler} />
+          <PlayButton onClick={restartGameHandler} buttonLabel="Restart" />
+          <PlayButton onClick={changeSettingsHandler} buttonLabel="Settings" />
         </div>
       </div>
     );
@@ -291,17 +291,12 @@ const GameOver = (props) => {
 
   return (
     <Fragment>
-      {!showGameOptions && (
-        <Modal gameOver={gameOver}>
-          <div className={classes.gameover}>
-            {!showPlayAgain && <GameOverMessage />}
-            {showPlayAgain && <PlayAgain />}
-          </div>
-        </Modal>
-      )}
-      {showGameOptions && (
-        <GameOptions onSelectedPattern={onStartGame} gameOver={gameOver} />
-      )}
+      <Modal>
+        <div className={classes.gameover}>
+          {!showPlayAgain && <GameOverMessage />}
+          {showPlayAgain && <PlayAgain />}
+        </div>
+      </Modal>
     </Fragment>
   );
 };

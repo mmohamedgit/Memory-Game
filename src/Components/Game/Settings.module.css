@@ -33,25 +33,6 @@ img.the-office {
   width: 11rem;
 }
 
-.select-options label {
-  margin-right: 5px;
-  font-size: 20px;
-}
-
-.select-options select {
-  background-color: transparent;
-  color: gold;
-  font-size: 20px;
-  text-align: center;
-  border: none;
-  font-family: "Lalezar-Regular";
-}
-
-.select-options option {
-  background: rgb(0, 0, 0);
-  font-family: "Lalezar-Regular";
-}
-
 .title {
   display: flex;
   margin-bottom: 1rem;
