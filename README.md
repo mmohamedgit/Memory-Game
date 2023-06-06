@@ -1,4 +1,4 @@
-<img src="https://github-readme-tech-stack.vercel.app/api/cards?title=This%20Project's%20Tech%20Stack&lineCount=1&theme=github_dark_green&line1=React,React,7aae9a;CSS3,CSS3,efcb5d;HTML5,HTML5,25ebd7;Node.js,Node.js,7f1835;" alt="My Tech Stack" />
+<img src="https://github-readme-tech-stack.vercel.app/api/cards?title=This%20Project's%20Tech%20Stack&lineCount=1&theme=github_dark_green&line1=React,React,7aae9a;CSS3,CSS3,efcb5d;HTML5,HTML5,25ebd7;" alt="My Tech Stack" />
 
 A mobile-friendly memory sequence game built with React, CSS, and HTML. Challenge yourself to memorize a sequence of images featuring colours, fun images of Elon Musk and characters from the popular TV show The Office. Improve your cognitive skills and test your memory with this engaging and entertaining game, optimized for seamless gameplay on all devices.
 
