@@ -15,7 +15,6 @@ function App() {
       {!hideSettings && <Settings />}
       {hideSettings && !isGameOver && (
         <>
-          <Header />
           <MemoryGame />
           <Footer />
         </>

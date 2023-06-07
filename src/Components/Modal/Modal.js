@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import ReactDOM from "react-dom";
 
 import { useSelector } from "react-redux";
@@ -21,7 +21,22 @@ const ModalOverlay = (props) => {
 };
 
 const ModalBackdrop = (props) => {
-  return <div className={classes.backdrop}>{props.children}</div>;
+  const isGameOver = useSelector((state) => state.game.isGameOver);
+  const [flashRed, setFlashRed] = useState("flash-red");
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setFlashRed("");
+    }, 800);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  const backDropClasses = `${classes.backdrop} ${
+    isGameOver ? classes[flashRed] : ""
+  }`;
+
+  return <div className={backDropClasses}>{props.children}</div>;
 };
 
 //To render and overlay the Modal at the top-most hierarchy in the body - good for accessibility

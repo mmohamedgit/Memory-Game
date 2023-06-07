@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { gameActions } from "../../store/game-slice.js";
-
+import Header from "../Header/Header.js";
 import GameTile from "./GameTile.js";
 import GameLevel from "./GameLevel";
 import classes from "./MemoryGame.module.css";
@@ -78,8 +78,9 @@ const MemoryGame = () => {
   }, [highestScore, gamePattern.length, dispatch]);
 
   return (
-    <div className={`${classes.app} ${isGameOver ? classes.gameover : ""}`}>
+    <div className={`${classes.app}${isGameOver ? classes.gameover : ""}`}>
       <main>
+        <Header />
         {!isGameOver && isGameStarted && (
           <div className={classes["gamebutton-section"]}>
             <GameLevel />
@@ -95,7 +96,7 @@ const MemoryGame = () => {
             </div>
           </div>
         )}
-        {highestScore > 0 && isGameStarted && (
+        {isGameStarted && (
           <div className={classes["high-score"]}>
             <h1>HIGH SCORE: {highestScore}</h1>
           </div>

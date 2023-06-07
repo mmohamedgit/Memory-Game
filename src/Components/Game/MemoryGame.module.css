@@ -23,10 +23,6 @@ body {
   position: relative;
 }
 
-/* .app.gameover {
-  background-color: #ff0000;
-} */
-
 main {
   min-height: 100vh;
   animation: fadeIn 3s;
@@ -149,12 +145,10 @@ main {
     position: relative;
     display: flex;
     margin: auto;
-    align-items: stretch;
-    justify-content: flex-start;
   }
 
   .gamebutton-section {
-    margin-left: 20rem;
+    margin-left: 25rem;
   }
 
   .gamebutton-layout {
@@ -178,7 +172,7 @@ main {
 
   .high-score {
     position: absolute;
-    text-align: center;
-    margin: 14rem auto;
+    left: 2rem;
+    margin-top: 20rem;
   }
 }

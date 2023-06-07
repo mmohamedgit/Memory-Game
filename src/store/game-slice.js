@@ -110,6 +110,7 @@ const gameSlice = createSlice({
   initialState: initialState,
   reducers: {
     startGame(state) {
+      state.freezeTiles = true;
       state.isGameStarted = true;
       state.isGameOver = false;
       playSound(StartSound);
