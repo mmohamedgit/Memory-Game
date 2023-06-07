@@ -3,7 +3,9 @@ import classes from "./Header.module.css";
 
 const Header = () => {
   const title = useSelector((state) => state.game.title);
-  const difficulty = useSelector((state) => state.settings.difficulty);
+  const tiles = useSelector((state) => state.game.tiles);
+
+  const difficulty = tiles.length;
 
   return (
     <div className={classes["game-header"]}>

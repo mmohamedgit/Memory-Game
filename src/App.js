@@ -13,7 +13,6 @@ function App() {
   return (
     <>
       {!hideSettings && <Settings />}
-
       {hideSettings && !isGameOver && (
         <>
           <Header />
@@ -21,7 +20,6 @@ function App() {
           <Footer />
         </>
       )}
-
       {isGameOver && hideSettings && <GameOver />}
     </>
   );

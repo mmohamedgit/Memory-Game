@@ -89,14 +89,13 @@ const MemoryGame = () => {
               }`}
               tabIndex={0}
             >
-              {tiles.map((tile, index) => {
-                return <GameTile key={tile} id={index} tile={tile} />;
-              })}
+              {tiles.map((tile, index) => (
+                <GameTile key={tile} id={index} tile={tile} />
+              ))}
             </div>
           </div>
         )}
-
-        {highestScore && isGameStarted && (
+        {highestScore > 0 && isGameStarted && (
           <div className={classes["high-score"]}>
             <h1>HIGH SCORE: {highestScore}</h1>
           </div>

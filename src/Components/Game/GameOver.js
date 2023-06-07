@@ -6,7 +6,6 @@ import { settingsActions } from "../../store/settings-slice";
 import Modal from "../Modal/Modal";
 import PlayButton from "./PlayButton";
 import classes from "./GameOver.module.css";
-import Settings from "./Settings";
 import { gameActions } from "../../store/game-slice";
 
 const GameOver = () => {
