@@ -35,7 +35,20 @@
   font-size: 3.75rem;
   margin-top: 0;
   margin-bottom: 1rem;
-  color: red;
+  animation: flash 1s infinite;
+  color: white;
+}
+
+@keyframes flash {
+  0% {
+    color: white; /* Starting color */
+  }
+  50% {
+    color: red; /* Flashing color */
+  }
+  100% {
+    color: white; /* Back to starting color */
+  }
 }
 
 .score-title {

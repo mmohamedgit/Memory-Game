@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 
 import { useSelector } from "react-redux";
@@ -21,20 +21,7 @@ const ModalOverlay = (props) => {
 };
 
 const ModalBackdrop = (props) => {
-  const isGameOver = useSelector((state) => state.game.isGameOver);
-  const [flashRed, setFlashRed] = useState("flash-red");
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setFlashRed("");
-    }, 800);
-
-    return () => clearTimeout(timeoutId);
-  }, []);
-
-  const backDropClasses = `${classes.backdrop} ${
-    isGameOver ? classes[flashRed] : ""
-  }`;
+  const backDropClasses = `${classes.backdrop}`;
 
   return <div className={backDropClasses}>{props.children}</div>;
 };

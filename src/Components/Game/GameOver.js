@@ -17,6 +17,16 @@ const GameOver = () => {
   const score = useSelector((state) => state.game.currentScore);
   const highestScore = useSelector((state) => state.game.highestScore);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPlayAgain(true);
+    }, 4000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [setShowPlayAgain]);
+
   let gameOverImgFormat;
 
   const numberOfGameOverImages = gameOverImages.length;
@@ -70,16 +80,6 @@ const GameOver = () => {
   const restartGameHandler = () => {
     dispatch(gameActions.resetPattern());
   };
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPlayAgain(true);
-    }, 4000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [setShowPlayAgain]);
 
   const GameOverMessage = () => {
     return (
