@@ -138,7 +138,7 @@ img.galaxy {
 }
 
 .message.nikola {
-  width: 50%;
+  width: 52%;
 }
 
 .message.leonardo {
@@ -345,7 +345,7 @@ img.scott-nooo {
   }
 
   img.nikola {
-    width: 12rem;
+    width: 8rem;
   }
 
   img.leonardo {
@@ -381,6 +381,10 @@ img.scott-nooo {
 
   .message.leonardo {
     width: 60%;
+  }
+
+  .message.nikola {
+    width: 55%;
   }
 
   .message.albert {
@@ -440,7 +444,7 @@ img.scott-nooo {
   }
 
   img.christopher {
-    width: 19rem;
+    width: 11rem;
   }
 
   img.isaac {
