@@ -8,7 +8,7 @@ import Footer from "./Components/Footer/Footer";
 
 import { useSelector } from "react-redux";
 
-function App() {
+const App = () => {
   const isGameOver = useSelector((state) => state.game.isGameOver);
   const hideSettings = useSelector((state) => state.settings.hideSettings);
 
@@ -98,6 +98,6 @@ function App() {
       {isGameOver && hideSettings && <GameOver />}
     </>
   );
-}
+};
 
 export default App;
