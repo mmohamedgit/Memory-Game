@@ -37,7 +37,9 @@ const Footer = () => {
             <FaEnvelope className="fa-beat" />
           </a>
         </div>
-        <p>Developed by Mohamed Mohamed</p>
+        <div>
+          <p>Developed by Mohamed Mohamed</p>
+        </div>
       </div>
     </footer>
   );
